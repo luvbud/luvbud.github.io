@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title></title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-07T17:35:30.226Z</updated>
+  <updated>2020-04-07T17:59:47.407Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>블로그 만듬</title>
+    <link href="http://luvbud.github.io/2020/04/08/today/"/>
+    <id>http://luvbud.github.io/2020/04/08/today/</id>
+    <published>2020-04-07T17:57:35.000Z</published>
+    <updated>2020-04-07T17:59:47.407Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h1&gt;&lt;h2 id=&quot;2&quot;&gt;&lt;a href=&quot;#2&quot; class=&quot;headerlink&quot; title=&quot;2&quot;&gt;&lt;/a&gt;2&lt;/h2&gt;&lt;h3 id=&quot;3&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="블로그" scheme="http://luvbud.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
