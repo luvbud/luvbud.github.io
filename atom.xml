@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-08T03:59:57.414Z</updated>
+  <updated>2020-04-09T14:28:54.472Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>시작</title>
-    <link href="http://luvbud.github.io/2020/04/08/today/"/>
-    <id>http://luvbud.github.io/2020/04/08/today/</id>
-    <published>2020-04-07T17:57:35.000Z</published>
-    <updated>2020-04-08T03:59:57.414Z</updated>
+    <title>2 0 2 0</title>
+    <link href="http://luvbud.github.io/2020/04/09/2%200%202%200/"/>
+    <id>http://luvbud.github.io/2020/04/09/2%200%202%200/</id>
+    <published>2020-04-09T14:14:08.000Z</published>
+    <updated>2020-04-09T14:28:54.472Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h1&gt;&lt;h2 id=&quot;2&quot;&gt;&lt;a href=&quot;#2&quot; class=&quot;headerlink&quot; title=&quot;2&quot;&gt;&lt;/a&gt;2&lt;/h2&gt;&lt;h3 id=&quot;3&quot;&gt;&lt;a
+          &lt;p&gt;&lt;img src=&quot;/img/bud.jpg&quot;
         
       
     
@@ -37,30 +37,7 @@
     
     
     
-      <category term="블로그" scheme="http://luvbud.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://luvbud.github.io/2020/04/08/hello-world/"/>
-    <id>http://luvbud.github.io/2020/04/08/hello-world/</id>
-    <published>2020-04-07T17:35:30.226Z</published>
-    <updated>2020-04-07T17:35:30.226Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
+      <category term="etc" scheme="http://luvbud.github.io/tags/etc/"/>
     
   </entry>
   
