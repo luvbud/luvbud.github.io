@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>파이썬 6시간 공부해보자 (1) - 자료형 · luvbud notebook</title><meta name="description" content="섹션 1. 자료형# 숫자 자료형
+print(5)
+print(-10)
+print(3.14)
+print(1000)
+print(5+3)
+print(2*8)
+print(3*(3+1))
+출력5-103.14100081612
+# 문자 자료형
+print('풍선')
+print(&quot;나비&quot;"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>파이썬 6시간 공부해보자 (1) - 자료형</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-10</span></p><p class="post-abstract"><br>
+
+<h4 id="섹션-1-자료형"><a href="#섹션-1-자료형" class="headerlink" title="섹션 1. 자료형"></a>섹션 1. 자료형</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 숫자 자료형</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>5<br>-10<br>3.14<br>1000<br>8<br>16<br>12</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 문자 자료형</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'풍선'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나비"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"ㅋㅋㅋㅋ"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"ㅋ"</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="출력-1"><a href="#출력-1" class="headerlink" title="출력"></a>출력</h4><p>풍선<br>나비<br>ㅋㅋㅋㅋ<br>ㅋㅋㅋㅋ</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># boolean 자료형</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">></span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">not</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">not</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">not</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">></span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="출력-2"><a href="#출력-2" class="headerlink" title="출력"></a>출력</h4><p>False<br>True<br>True<br>False<br>False<br>True<br>True</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 변수</span>
+animal <span class="token operator">=</span> <span class="token string">"강아지"</span>
+name <span class="token operator">=</span> <span class="token string">"따용"</span>
+age <span class="token operator">=</span> <span class="token number">7</span>
+hobby <span class="token operator">=</span> <span class="token string">"산책"</span>
+is_adult <span class="token operator">=</span> age <span class="token operator">>=</span> <span class="token number">3</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"우리집 "</span> <span class="token operator">+</span> animal <span class="token operator">+</span> <span class="token string">" 이름은 "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span>
+hobby <span class="token operator">=</span> <span class="token string">"인형물기"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"이는 "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"살이며, "</span> <span class="token operator">+</span> hobby <span class="token operator">+</span> <span class="token string">"을 좋아함"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">"이는 "</span><span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token string">"살이며, "</span><span class="token punctuation">,</span> hobby <span class="token punctuation">,</span><span class="token string">"을(를) 좋아함"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"이는 어른일까? "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>is_adult<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="출력-3"><a href="#출력-3" class="headerlink" title="출력"></a>출력</h4><p>우리집 강아지 이름은 따용<br>따용이는 7살이며, 인형물기을 좋아함<br>따용 이는  7 살이며,  인형물기 을(를) 좋아함<br>따용이는 어른일까? True</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz #1</span>
+station <span class="token operator">=</span> <span class="token string">"사당"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>station <span class="token operator">+</span> <span class="token string">"행 열차가 들어오고 있습니다."</span><span class="token punctuation">)</span>
+
+station <span class="token operator">=</span> <span class="token string">"신도림"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>station <span class="token operator">+</span> <span class="token string">"행 열차가 들어오고 있습니다."</span><span class="token punctuation">)</span>
+
+station <span class="token operator">=</span> <span class="token string">"인천공항"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>station <span class="token operator">+</span> <span class="token string">"행 열차가 들어오고 있습니다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="출력-4"><a href="#출력-4" class="headerlink" title="출력"></a>출력</h4><p>사당행 열차가 들어오고 있습니다.<br>신도림행 열차가 들어오고 있습니다.<br>인천공항행 열차가 들어오고 있습니다.</p>
+</p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-000/" title="파이썬 6시간 공부해보자 (0)">Next: 파이썬 6시간 공부해보자 (0)&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

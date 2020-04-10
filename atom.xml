@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-09T18:45:10.158Z</updated>
+  <updated>2020-04-10T14:42:06.852Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>파이썬 6시간 공부해보자 (1) - 자료형</title>
+    <link href="http://luvbud.github.io/python-001/"/>
+    <id>http://luvbud.github.io/python-001/</id>
+    <published>2020-04-10T13:49:35.000Z</published>
+    <updated>2020-04-10T14:42:06.852Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+
+&lt;h4 id=&quot;섹션-1-자료형&quot;&gt;&lt;a href=&quot;#섹션-1-자료형&quot; class=&quot;headerlink&quot; title=&quot;섹션 1. 자료형&quot;&gt;&lt;/a&gt;섹션 1. 자료형&lt;/h4&gt;&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>파이썬 6시간 공부해보자 (0)</title>
+    <link href="http://luvbud.github.io/python-000/"/>
+    <id>http://luvbud.github.io/python-000/</id>
+    <published>2020-04-10T13:22:25.000Z</published>
+    <updated>2020-04-10T14:33:11.952Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+
+&lt;h5 id=&quot;코로나로-인해-비대면-강의가-계속되고-있다&quot;&gt;&lt;a href=&quot;#코로나로-인해-비대면-강의가-계속되고-있다&quot; class=&quot;headerlink&quot; title=&quot;코로나로 인해 비대면 강의가 계속되고 있다.&quot;&gt;&lt;/a&gt;코로나로 인해
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
+    
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>시작하며 .</title>
     <link href="http://luvbud.github.io/etc-001/"/>
     <id>http://luvbud.github.io/etc-001/</id>
     <published>2020-04-09T14:14:08.000Z</published>
-    <updated>2020-04-09T18:45:10.158Z</updated>
+    <updated>2020-04-10T14:33:23.333Z</updated>
     
     <summary type="html">
     
