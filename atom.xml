@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-10T14:43:01.653Z</updated>
+  <updated>2020-04-10T15:16:17.907Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://luvbud.github.io/python-001/"/>
     <id>http://luvbud.github.io/python-001/</id>
     <published>2020-04-10T13:49:35.000Z</published>
-    <updated>2020-04-10T14:43:01.653Z</updated>
+    <updated>2020-04-10T15:16:17.907Z</updated>
     
     <summary type="html">
     
@@ -31,7 +31,9 @@
         
           &lt;br&gt;
 
-&lt;h4 id=&quot;섹션-1-자료형&quot;&gt;&lt;a href=&quot;#섹션-1-자료형&quot; class=&quot;headerlink&quot; title=&quot;섹션 1. 자료형&quot;&gt;&lt;/a&gt;섹션 1. 자료형&lt;/h4&gt;&lt;pre class=&quot;line-numbers
+&lt;h4 id=&quot;섹션-1-자료형&quot;&gt;&lt;a href=&quot;#섹션-1-자료형&quot; class=&quot;headerlink&quot; title=&quot;섹션 1. 자료형&quot;&gt;&lt;/a&gt;&lt;strong&gt;섹션 1. 자료형&lt;/strong&gt;&lt;/h4&gt;&lt;br&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 숫자
         
       
     
