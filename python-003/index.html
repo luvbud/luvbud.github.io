@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>파이썬 6시간 공부해보자 (3) - 문자열 처리 · luvbud notebook</title><meta name="description" content="섹션 3. 문자열 처리
+
+1. 문자열
+▷ 입력# 문자열
+sentence = &quot;나는 김머머입니다.&quot;
+print(sentence)
+sentence = '파이썬은 쉬워요'
+print(sentence)
+sentence = &quot;&quot;&quot;
+나는 김머머이고, 
+파이썬은 쉬워요
+&quot;&quot;&quot;
+pr"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>파이썬 6시간 공부해보자 (3) - 문자열 처리</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-12</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/study/" title="study" class="a-tag">study</a><span>&nbsp;</span><a href="/tags/python/" title="python" class="a-tag">python</a><span>&nbsp;</span></span></p><p class="post-abstract"><br>
+
+<h4 id="섹션-3-문자열-처리"><a href="#섹션-3-문자열-처리" class="headerlink" title="섹션 3. 문자열 처리"></a><strong>섹션 3. 문자열 처리</strong></h4><br>
+
+<p><strong>1. 문자열</strong></p>
+<h5 id="▷-입력"><a href="#▷-입력" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 문자열</span>
+sentence <span class="token operator">=</span> <span class="token string">"나는 김머머입니다."</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span>
+sentence <span class="token operator">=</span> <span class="token string">'파이썬은 쉬워요'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span>
+sentence <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+나는 김머머이고, 
+파이썬은 쉬워요
+"""</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sentence<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="나는-김머머입니다"><a href="#나는-김머머입니다" class="headerlink" title="나는 김머머입니다."></a>나는 김머머입니다.</h6><h6 id="파이썬은-쉬워요"><a href="#파이썬은-쉬워요" class="headerlink" title="파이썬은 쉬워요"></a>파이썬은 쉬워요</h6><br>
+
+<h6 id="나는-김머머이고"><a href="#나는-김머머이고" class="headerlink" title="나는 김머머이고,"></a>나는 김머머이고,</h6><h6 id="파이썬은-쉬워요-1"><a href="#파이썬은-쉬워요-1" class="headerlink" title="파이썬은 쉬워요"></a>파이썬은 쉬워요</h6><br>
+
+</details>
+
+<p><br><br></p>
+<p><strong>2. 슬라이싱</strong></p>
+<h5 id="▷-입력-1"><a href="#▷-입력-1" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 슬라이싱</span>
+young <span class="token operator">=</span> <span class="token string">"990105-2311111"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"성별 : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"연 : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 0부터 2직전까지 (0, 1)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"월 : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"일 : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"생년월일 : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 처음부터 6직전까지</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"뒷자리 : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 7부터 끝까지</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"뒷자리 (뒤부터) : "</span> <span class="token operator">+</span> young<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 맨 뒤에서 7번째부터 끝까지</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="성별-2"><a href="#성별-2" class="headerlink" title="성별 : 2"></a>성별 : 2</h6><h6 id="연-99"><a href="#연-99" class="headerlink" title="연 : 99"></a>연 : 99</h6><h6 id="월-01"><a href="#월-01" class="headerlink" title="월 : 01"></a>월 : 01</h6><h6 id="일-05"><a href="#일-05" class="headerlink" title="일 : 05"></a>일 : 05</h6><h6 id="생년월일-990105"><a href="#생년월일-990105" class="headerlink" title="생년월일 : 990105"></a>생년월일 : 990105</h6><h6 id="뒷자리-2311111"><a href="#뒷자리-2311111" class="headerlink" title="뒷자리 : 2311111"></a>뒷자리 : 2311111</h6><h6 id="뒷자리-뒤부터-2311111"><a href="#뒷자리-뒤부터-2311111" class="headerlink" title="뒷자리 (뒤부터) : 2311111"></a>뒷자리 (뒤부터) : 2311111</h6></details>
+
+<p><br><br></p>
+<p><strong>3. 문자열처리함수</strong></p>
+<h5 id="▷-입력-2"><a href="#▷-입력-2" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 문자열 처리 함수</span>
+python <span class="token operator">=</span> <span class="token string">"Python is Amazing"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>python<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>python<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>python<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>python<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>python<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+index <span class="token operator">=</span> python<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"n"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+index <span class="token operator">=</span> python<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"n"</span><span class="token punctuation">,</span> index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>python<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"Java"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># -1 출력</span>
+<span class="token comment" spellcheck="true"># print(python.index("Java")) # 오류가 남, 프로그램 종료</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>python<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">"n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+
+<h6 id="python-is-amazing"><a href="#python-is-amazing" class="headerlink" title="python is amazing"></a>python is amazing</h6><h6 id="PYTHON-IS-AMAZING"><a href="#PYTHON-IS-AMAZING" class="headerlink" title="PYTHON IS AMAZING"></a>PYTHON IS AMAZING</h6><h6 id="True"><a href="#True" class="headerlink" title="True"></a>True</h6><h6 id="17"><a href="#17" class="headerlink" title="17"></a>17</h6><h6 id="Java-is-Amazing"><a href="#Java-is-Amazing" class="headerlink" title="Java is Amazing"></a>Java is Amazing</h6><br>
+
+<h6 id="5"><a href="#5" class="headerlink" title="5"></a>5</h6><h6 id="15"><a href="#15" class="headerlink" title="15"></a>15</h6><h6 id="1"><a href="#1" class="headerlink" title="-1"></a>-1</h6><h6 id="2"><a href="#2" class="headerlink" title="2"></a>2</h6></details>
+
+<p><br><br></p>
+<p><strong>4. 문자열 포맷</strong></p>
+<h5 id="▷-입력-3"><a href="#▷-입력-3" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 문자열 포맷</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"a"</span> <span class="token operator">+</span> <span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 방법 1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 %d살입니다."</span> <span class="token operator">%</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 %s을 좋아해요."</span> <span class="token operator">%</span> <span class="token string">"파이썬"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Apple은 %c로 시작해요."</span> <span class="token operator">%</span> <span class="token string">"A"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># %s</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 %s살입니다."</span> <span class="token operator">%</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 %s색과 %s색을 좋아해요."</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token string">"파란"</span><span class="token punctuation">,</span> <span class="token string">"빨간"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 방법 2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 {}살입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 {}색과 {}색을 좋아해요."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">"파란"</span><span class="token punctuation">,</span> <span class="token string">"빨간"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 {1}색과 {0}색을 좋아해요."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">"파란"</span><span class="token punctuation">,</span> <span class="token string">"빨간"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 {0}색과 {1}색을 좋아해요."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">"파란"</span><span class="token punctuation">,</span> <span class="token string">"빨간"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 방법 3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 {age}살이며, {color}색을 좋아해요."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"빨간"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나는 {age}살이며, {color}색을 좋아해요."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>color <span class="token operator">=</span> <span class="token string">"빨간"</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 방법 4 (v3.6 이상~)</span>
+age <span class="token operator">=</span> <span class="token number">20</span>
+color <span class="token operator">=</span> <span class="token string">"분홍"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"나는 {age}살이며, {color}색을 좋아해요."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="ab"><a href="#ab" class="headerlink" title="ab"></a>ab</h6><h6 id="a-b"><a href="#a-b" class="headerlink" title="a b"></a>a b</h6><br>
+
+<h6 id="나는-20살입니다"><a href="#나는-20살입니다" class="headerlink" title="나는 20살입니다."></a>나는 20살입니다.</h6><h6 id="나는-파이썬을-좋아해요"><a href="#나는-파이썬을-좋아해요" class="headerlink" title="나는 파이썬을 좋아해요."></a>나는 파이썬을 좋아해요.</h6><h6 id="Apple은-A로-시작해요"><a href="#Apple은-A로-시작해요" class="headerlink" title="Apple은 A로 시작해요."></a>Apple은 A로 시작해요.</h6><br>
+
+<h6 id="나는-20살입니다-1"><a href="#나는-20살입니다-1" class="headerlink" title="나는 20살입니다."></a>나는 20살입니다.</h6><h6 id="나는-파란색과-빨간색을-좋아해요"><a href="#나는-파란색과-빨간색을-좋아해요" class="headerlink" title="나는 파란색과 빨간색을 좋아해요."></a>나는 파란색과 빨간색을 좋아해요.</h6><br>
+
+<h6 id="나는-20살입니다-2"><a href="#나는-20살입니다-2" class="headerlink" title="나는 20살입니다."></a>나는 20살입니다.</h6><h6 id="나는-파란색과-빨간색을-좋아해요-1"><a href="#나는-파란색과-빨간색을-좋아해요-1" class="headerlink" title="나는 파란색과 빨간색을 좋아해요."></a>나는 파란색과 빨간색을 좋아해요.</h6><h6 id="나는-빨간색과-파란색을-좋아해요"><a href="#나는-빨간색과-파란색을-좋아해요" class="headerlink" title="나는 빨간색과 파란색을 좋아해요."></a>나는 빨간색과 파란색을 좋아해요.</h6><h6 id="나는-파란색과-빨간색을-좋아해요-2"><a href="#나는-파란색과-빨간색을-좋아해요-2" class="headerlink" title="나는 파란색과 빨간색을 좋아해요."></a>나는 파란색과 빨간색을 좋아해요.</h6><br>
+
+<h6 id="나는-20살이며-빨간색을-좋아해요"><a href="#나는-20살이며-빨간색을-좋아해요" class="headerlink" title="나는 20살이며, 빨간색을 좋아해요."></a>나는 20살이며, 빨간색을 좋아해요.</h6><h6 id="나는-20살이며-빨간색을-좋아해요-1"><a href="#나는-20살이며-빨간색을-좋아해요-1" class="headerlink" title="나는 20살이며, 빨간색을 좋아해요."></a>나는 20살이며, 빨간색을 좋아해요.</h6><br>
+
+<h6 id="나는-20살이며-분홍색을-좋아해요"><a href="#나는-20살이며-분홍색을-좋아해요" class="headerlink" title="나는 20살이며, 분홍색을 좋아해요."></a>나는 20살이며, 분홍색을 좋아해요.</h6></details>
+
+<p><br><br></p>
+<p><strong>5. 탈출문자</strong></p>
+<h5 id="▷-입력-4"><a href="#▷-입력-4" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 탈출문자</span>
+<span class="token comment" spellcheck="true"># \n : 줄바꿈</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"백문이 불여일견\n백견이 불여일타"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># \' \" : 문장 내에서 따옴표</span>
+<span class="token comment" spellcheck="true"># 저는 "김머머"입니다.</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'저는 "김머머"입니다.'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"저는 \"김머머\"입니다."</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"저는 \'김머머\'입니다."</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># \\ : 문장 내에서 \</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"C:\\Users\\young\\Desktop\\young\\study\\python>"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># \r : 커서를 맨 앞으로 이동</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Red Apple\rPine"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#PineApple</span>
+
+<span class="token comment" spellcheck="true"># \b : 백스페이스 (한 글자 삭제)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Redd\bApple"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#RedApple</span>
+
+<span class="token comment" spellcheck="true"># \t : 탭</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Red\tApple"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="백문이-불여일견"><a href="#백문이-불여일견" class="headerlink" title="백문이 불여일견"></a>백문이 불여일견</h6><h6 id="백견이-불여일타"><a href="#백견이-불여일타" class="headerlink" title="백견이 불여일타"></a>백견이 불여일타</h6><br>
+
+<h6 id="저는-“김머머”입니다"><a href="#저는-“김머머”입니다" class="headerlink" title="저는 “김머머”입니다."></a>저는 “김머머”입니다.</h6><h6 id="저는-“김머머”입니다-1"><a href="#저는-“김머머”입니다-1" class="headerlink" title="저는 “김머머”입니다."></a>저는 “김머머”입니다.</h6><h6 id="저는-‘김머머’입니다"><a href="#저는-‘김머머’입니다" class="headerlink" title="저는 ‘김머머’입니다."></a>저는 ‘김머머’입니다.</h6><br>
+
+<h6 id="C-Users-young-Desktop-young-study-python-gt"><a href="#C-Users-young-Desktop-young-study-python-gt" class="headerlink" title="C:\Users\young\Desktop\young\study\python&gt;"></a>C:\Users\young\Desktop\young\study\python&gt;</h6><br>
+
+<h6 id="PineApple"><a href="#PineApple" class="headerlink" title="PineApple"></a>PineApple</h6><h6 id="RedApple"><a href="#RedApple" class="headerlink" title="RedApple"></a>RedApple</h6><h6 id="Red-Apple"><a href="#Red-Apple" class="headerlink" title="Red　　　Apple"></a>Red　　　Apple</h6></details>
+
+<p><br><br></p>
+<p><strong>6. Quiz</strong></p>
+<h5 id="▷-입력-5"><a href="#▷-입력-5" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz 3.</span>
+<span class="token comment" spellcheck="true"># 사이트별로 비밀번호를 만들어주는 프로그램을 작성하시오</span>
+<span class="token comment" spellcheck="true"># 예) http://naver.com</span>
+<span class="token comment" spellcheck="true"># 규칙1: http:// 부분은 제외 => naver.com</span>
+<span class="token comment" spellcheck="true"># 규칙2: 처음 만나는 점(.) 이후 부분은 제외 => naver</span>
+<span class="token comment" spellcheck="true"># 규칙3: 남은 글자 중 처음 세자리 + 글자 갯수 + 글자 내 'e' 갯수 + '!' 로 구성</span>
+<span class="token comment" spellcheck="true">#                         (nav)                       (5)                    (1)                  (!)</span>
+<span class="token comment" spellcheck="true"># 예) 생성된 비밀번호 : nav51!</span>
+
+<span class="token comment" spellcheck="true"># 내가 작성한 코드</span>
+site <span class="token operator">=</span> <span class="token string">"http://naver.com"</span>
+site <span class="token operator">=</span> site<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span>site<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"생성된 비밀번호 : "</span> <span class="token operator">+</span> site<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>len<span class="token punctuation">(</span>site<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>site<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 답</span>
+url <span class="token operator">=</span> <span class="token string">"http://google.com"</span>
+my_str <span class="token operator">=</span> url<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"http://"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 규칙1</span>
+my_str <span class="token operator">=</span> my_str<span class="token punctuation">[</span><span class="token punctuation">:</span>my_str<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 규칙2</span>
+<span class="token comment" spellcheck="true"># my_str[0:5] -> 0 ~ 5 직전까지 (0, 1, 2, 3, 4)</span>
+password <span class="token operator">=</span> my_str<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>len<span class="token punctuation">(</span>my_str<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>my_str<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"!"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"생성된 비밀번호 : {0}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="생성된-비밀번호-nav51"><a href="#생성된-비밀번호-nav51" class="headerlink" title="생성된 비밀번호 : nav51!"></a>생성된 비밀번호 : nav51!</h6><h6 id="생성된-비밀번호-goo61"><a href="#생성된-비밀번호-goo61" class="headerlink" title="생성된 비밀번호 : goo61!"></a>생성된 비밀번호 : goo61!</h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-002/" title="파이썬 6시간 공부해보자 (2) - 연산자">Next: 파이썬 6시간 공부해보자 (2) - 연산자&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
