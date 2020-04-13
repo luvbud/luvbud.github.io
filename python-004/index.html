@@ -199,16 +199,7 @@ menu <span class="token operator">=</span> tuple<span class="token punctuation">
 <span class="token keyword">print</span><span class="token punctuation">(</span>menu<span class="token punctuation">,</span> type<span class="token punctuation">(</span>menu<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true"># memu = set(menu)</span>
-<span class="token comment" spellcheck="true"># print(menu, type(menu)) # set 타입으로 바뀌어야하는데 안됨...</span>
-
-
-<span class="token comment" spellcheck="true"># (추가 개념)</span>
-<span class="token keyword">from</span> random <span class="token keyword">import</span> <span class="token operator">*</span>
-lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
-shuffle<span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>sample<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># print(menu, type(menu)) # set 타입으로 바뀌어야하는데 안됨...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
@@ -217,6 +208,30 @@ shuffle<span class="token punctuation">(</span>lst<span class="token punctuation
 <p><br><br></p>
 <p><strong>6. Quiz</strong></p>
 <h5 id="▷-입력-5"><a href="#▷-입력-5" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz 4.</span>
+<span class="token comment" spellcheck="true"># 당신의 학교에서는 파이썬 코딩 대회를 주최합니다.</span>
+<span class="token comment" spellcheck="true"># 참석률을 높이기 위해 댓글 이벤트를 진행하기로 하였습니다.</span>
+<span class="token comment" spellcheck="true"># 댓글 작성자들 중에 추첨을 통해 1명은 치킨, 3명은 커피 쿠폰을 받게 됩니다.</span>
+<span class="token comment" spellcheck="true"># 추첨 프로그램을 작성하시오.</span>
+
+<span class="token comment" spellcheck="true"># 조건1 : 편의상 댓글은 20명이 작성하였고 아이디는 1~20 이라고 가정</span>
+<span class="token comment" spellcheck="true"># 조건2 : 댓글 내용과 상관 없이 무작위로 추첨하되 중복 불가</span>
+<span class="token comment" spellcheck="true"># 조건3 : random 모듈의 shuffle 과 sample 을 활용</span>
+
+<span class="token comment" spellcheck="true"># (출력 예제)</span>
+<span class="token comment" spellcheck="true"># -- 당첨자 발표 --</span>
+<span class="token comment" spellcheck="true"># 치킨 당첨자 : 1</span>
+<span class="token comment" spellcheck="true"># 커피 당첨자 : [2, 3, 4]</span>
+<span class="token comment" spellcheck="true"># -- 축하합니다 --</span>
+
+<span class="token comment" spellcheck="true"># (활용 예제)</span>
+<span class="token keyword">from</span> random <span class="token keyword">import</span> <span class="token operator">*</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+shuffle<span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sample<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 내가 작성한 코드</span>
 users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
 shuffle<span class="token punctuation">(</span>users<span class="token punctuation">)</span>
 chicken <span class="token operator">=</span> sample<span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
@@ -231,19 +246,17 @@ coffee <span class="token operator">=</span> sample<span class="token punctuatio
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"커피 당첨자 : "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>coffee<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" -- 축하합니다 --"</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># Quiz 답</span>
+<span class="token comment" spellcheck="true"># 답</span>
 users <span class="token operator">=</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 1부터 20까지 숫자 생성</span>
 <span class="token comment" spellcheck="true"># print(type(users)) # 타입 range</span>
 users <span class="token operator">=</span> list<span class="token punctuation">(</span>users<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># print(type(users)) # 타입 list</span>
-
 shuffle<span class="token punctuation">(</span>users<span class="token punctuation">)</span>
 winners <span class="token operator">=</span> sample<span class="token punctuation">(</span>users<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 4명 중에서 1명은 치킨, 3명은 커피</span>
-
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" -- 당첨자 발표 --"</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"치킨 당첨자 : {0}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>winners<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"커피 당첨자 : {0}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>winners<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" -- 축하합니다 --"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" -- 축하합니다 --"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
