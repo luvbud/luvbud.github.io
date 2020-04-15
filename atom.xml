@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-13T14:17:34.771Z</updated>
+  <updated>2020-04-15T14:27:11.372Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>파이썬 6시간 공부해보자 (5) - 제어문</title>
+    <link href="http://luvbud.github.io/python-005/"/>
+    <id>http://luvbud.github.io/python-005/</id>
+    <published>2020-04-15T14:00:03.000Z</published>
+    <updated>2020-04-15T14:27:11.372Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+
+&lt;h4 id=&quot;섹션-5-제어문&quot;&gt;&lt;a href=&quot;#섹션-5-제어문&quot; class=&quot;headerlink&quot; title=&quot;섹션 5. 제어문&quot;&gt;&lt;/a&gt;&lt;strong&gt;섹션 5. 제어문&lt;/strong&gt;&lt;/h4&gt;&lt;br&gt;
+
+&lt;p&gt;&lt;strong&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
+    
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>파이썬 6시간 공부해보자 (4) - 자료구조</title>
@@ -143,7 +174,7 @@
     <link href="http://luvbud.github.io/python-000/"/>
     <id>http://luvbud.github.io/python-000/</id>
     <published>2020-04-10T13:22:25.000Z</published>
-    <updated>2020-04-13T13:55:28.255Z</updated>
+    <updated>2020-04-15T14:01:41.651Z</updated>
     
     <summary type="html">
     
