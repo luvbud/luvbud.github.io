@@ -107,6 +107,7 @@ score_file <span class="token operator">=</span> open<span class="token punctuat
 score_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true"># 파일이 몇 줄인지 모를 때</span>
+<span class="token comment" spellcheck="true"># 방법 1</span>
 score_file <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"score.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span>
 <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
     line <span class="token operator">=</span> score_file<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -115,15 +116,26 @@ score_file <span class="token operator">=</span> open<span class="token punctuat
     <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span>
 score_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
+<span class="token comment" spellcheck="true"># 방법 2</span>
 score_file <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"score.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span>
 lines <span class="token operator">=</span> score_file<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># list 형태로 저장</span>
 <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span>
-score_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+score_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
+<h6 id="수학-0-1"><a href="#수학-0-1" class="headerlink" title="수학 : 0"></a>수학 : 0</h6><h6 id="영어-50-1"><a href="#영어-50-1" class="headerlink" title="영어 : 50"></a>영어 : 50</h6><h6 id="과학-80"><a href="#과학-80" class="headerlink" title="과학 : 80"></a>과학 : 80</h6><h6 id="코딩-100-1"><a href="#코딩-100-1" class="headerlink" title="코딩 : 100"></a>코딩 : 100</h6><br>
+
+<h6 id="수학-0-2"><a href="#수학-0-2" class="headerlink" title="수학 : 0"></a>수학 : 0</h6><br>
+
+<h6 id="영어-50-2"><a href="#영어-50-2" class="headerlink" title="영어 : 50"></a>영어 : 50</h6><br>
+
+<h6 id="과학-80-1"><a href="#과학-80-1" class="headerlink" title="과학 : 80"></a>과학 : 80</h6><h6 id="코딩-100-2"><a href="#코딩-100-2" class="headerlink" title="코딩 : 100"></a>코딩 : 100</h6><br>
+
+<h6 id="수학-0-3"><a href="#수학-0-3" class="headerlink" title="수학 : 0"></a>수학 : 0</h6><h6 id="영어-50-3"><a href="#영어-50-3" class="headerlink" title="영어 : 50"></a>영어 : 50</h6><h6 id="과학-80-2"><a href="#과학-80-2" class="headerlink" title="과학 : 80"></a>과학 : 80</h6><h6 id="코딩-100-3"><a href="#코딩-100-3" class="headerlink" title="코딩 : 100"></a>코딩 : 100</h6><br>
+
+<h6 id="수학-0-4"><a href="#수학-0-4" class="headerlink" title="수학 : 0"></a>수학 : 0</h6><h6 id="영어-50-4"><a href="#영어-50-4" class="headerlink" title="영어 : 50"></a>영어 : 50</h6><h6 id="과학-80-3"><a href="#과학-80-3" class="headerlink" title="과학 : 80"></a>과학 : 80</h6><h6 id="코딩-100-4"><a href="#코딩-100-4" class="headerlink" title="코딩 : 100"></a>코딩 : 100</h6></details>
 
 <p><br><br></p>
 <p><strong>4. pickle</strong></p>
@@ -143,7 +155,9 @@ profile_file<span class="token punctuation">.</span>close<span class="token punc
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
+<h6 id="‘이름’-‘박명수’-‘나이’-30-‘취미’-‘축구’-‘골프’-‘코딩’"><a href="#‘이름’-‘박명수’-‘나이’-30-‘취미’-‘축구’-‘골프’-‘코딩’" class="headerlink" title="{‘이름’: ‘박명수’, ‘나이’: 30, ‘취미’: [‘축구’, ‘골프’, ‘코딩’]}"></a>{‘이름’: ‘박명수’, ‘나이’: 30, ‘취미’: [‘축구’, ‘골프’, ‘코딩’]}</h6><br>
+
+<h6 id="‘이름’-‘박명수’-‘나이’-30-‘취미’-‘축구’-‘골프’-‘코딩’-1"><a href="#‘이름’-‘박명수’-‘나이’-30-‘취미’-‘축구’-‘골프’-‘코딩’-1" class="headerlink" title="{‘이름’: ‘박명수’, ‘나이’: 30, ‘취미’: [‘축구’, ‘골프’, ‘코딩’]}"></a>{‘이름’: ‘박명수’, ‘나이’: 30, ‘취미’: [‘축구’, ‘골프’, ‘코딩’]}</h6></details>
 
 <p><br><br></p>
 <p><strong>5. with</strong></p>
@@ -161,7 +175,9 @@ profile_file<span class="token punctuation">.</span>close<span class="token punc
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details>
+<h6 id="‘이름’-‘박명수’-‘나이’-30-‘취미’-‘축구’-‘골프’-‘코딩’-2"><a href="#‘이름’-‘박명수’-‘나이’-30-‘취미’-‘축구’-‘골프’-‘코딩’-2" class="headerlink" title="{‘이름’: ‘박명수’, ‘나이’: 30, ‘취미’: [‘축구’, ‘골프’, ‘코딩’]}"></a>{‘이름’: ‘박명수’, ‘나이’: 30, ‘취미’: [‘축구’, ‘골프’, ‘코딩’]}</h6><br>
+
+<h6 id="파이썬을-열심히-공부하고-있어요"><a href="#파이썬을-열심히-공부하고-있어요" class="headerlink" title="파이썬을 열심히 공부하고 있어요"></a>파이썬을 열심히 공부하고 있어요</h6></details>
 
 <p><br><br></p>
 <p><strong>6. Quiz</strong></p>
@@ -185,9 +201,9 @@ profile_file<span class="token punctuation">.</span>close<span class="token punc
         report_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"\n이름 : "</span><span class="token punctuation">)</span>
         report_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"\n업무 요약 : "</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># with open("1 주차.txt", "r", encoding="utf8") as report_file:</span>
-<span class="token comment" spellcheck="true">#      print(report_file.read())</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">"1 주차.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> report_file<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>report_file<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-3"><a href="#-3" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-006/" title="파이썬 6시간 공부해보자 (6) - 함수">Next: 파이썬 6시간 공부해보자 (6) - 함수&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<h6 id="1-주차-주간-보고"><a href="#1-주차-주간-보고" class="headerlink" title="- 1 주차 주간 보고 -"></a>- 1 주차 주간 보고 -</h6><h6 id="부서"><a href="#부서" class="headerlink" title="부서 :"></a>부서 :</h6><h6 id="이름"><a href="#이름" class="headerlink" title="이름 :"></a>이름 :</h6><h6 id="업무-요약"><a href="#업무-요약" class="headerlink" title="업무 요약 :"></a>업무 요약 :</h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-006/" title="파이썬 6시간 공부해보자 (6) - 함수">Next: 파이썬 6시간 공부해보자 (6) - 함수&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
