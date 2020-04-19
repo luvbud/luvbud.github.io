@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-17T14:37:46.382Z</updated>
+  <updated>2020-04-19T14:09:40.455Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>파이썬 6시간 공부해보자 (8) - 클래스</title>
+    <link href="http://luvbud.github.io/python-008/"/>
+    <id>http://luvbud.github.io/python-008/</id>
+    <published>2020-04-19T14:04:31.000Z</published>
+    <updated>2020-04-19T14:09:40.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;예정&quot;&gt;&lt;a href=&quot;#예정&quot; class=&quot;headerlink&quot; title=&quot;예정&quot;&gt;&lt;/a&gt;예정&lt;/h4&gt;&lt;h4 id=&quot;섹션-8-클래스&quot;&gt;&lt;a href=&quot;#섹션-8-클래스&quot; class=&quot;headerlink&quot; title=&quot;섹션 8.
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
+    
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>파이썬 6시간 공부해보자 (7) - 입출력</title>
