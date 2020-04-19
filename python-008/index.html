@@ -131,8 +131,7 @@ wraith2<span class="token punctuation">.</span>clocking <span class="token opera
 <h5 id="▷-입력-3"><a href="#▷-입력-3" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 메소드</span>
 <span class="token comment" spellcheck="true"># 일반 유닛</span>
 <span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 파이썬에서 쓰이는 생성자. </span>
-        <span class="token comment" spellcheck="true"># 멤버변수 = 클래스 내에서 정의된 변수</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
         self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
         self<span class="token punctuation">.</span>damage <span class="token operator">=</span> damage
@@ -163,7 +162,7 @@ firebat1<span class="token punctuation">.</span>attack<span class="token punctua
 
 <span class="token comment" spellcheck="true"># 공격 2번 받는다고 가정</span>
 firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
-firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
@@ -171,27 +170,168 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 
 <p><br><br></p>
 <p><strong>5. 상속</strong></p>
-<h5 id="▷-입력-4"><a href="#▷-입력-4" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="▷-입력-4"><a href="#▷-입력-4" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 상속</span>
+<span class="token comment" spellcheck="true"># 일반 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+
+<span class="token comment" spellcheck="true"># 공격 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">AttackUnit</span><span class="token punctuation">(</span>Unit<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격 유닛은 일반 유닛 클래스를 상속 받아 만들어짐.</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Unit<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Unit의 생성자 호출</span>
+        self<span class="token punctuation">.</span>damage <span class="token operator">=</span> damage
+
+    <span class="token keyword">def</span> <span class="token function">attack</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격할 때</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">damaged</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격받았을 때</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 데미지를 입었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>hp <span class="token operator">-=</span> damage
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : 현재 체력은 {1} 입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>hp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>hp <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : 파괴되었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 메딕 : 의무병</span>
+medic <span class="token operator">=</span> Unit<span class="token punctuation">(</span><span class="token string">"메딕"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 파이어뱃 : 공격 유닛, 화염방사기.</span>
+firebat1 <span class="token operator">=</span> AttackUnit<span class="token punctuation">(</span><span class="token string">"파이어뱃"</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+firebat1<span class="token punctuation">.</span>attack<span class="token punctuation">(</span><span class="token string">"5시"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 공격 2번 받는다고 가정</span>
+firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
+firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
+<h6 id="파이어뱃-5시-방향으로-적군을-공격합니다-공격력-16-1"><a href="#파이어뱃-5시-방향으로-적군을-공격합니다-공격력-16-1" class="headerlink" title="파이어뱃 : 5시 방향으로 적군을 공격합니다. [공격력 16]"></a>파이어뱃 : 5시 방향으로 적군을 공격합니다. [공격력 16]</h6><h6 id="파이어뱃-25-데미지를-입었습니다-2"><a href="#파이어뱃-25-데미지를-입었습니다-2" class="headerlink" title="파이어뱃 : 25 데미지를 입었습니다."></a>파이어뱃 : 25 데미지를 입었습니다.</h6><h6 id="파이어뱃-현재-체력은-25-입니다-1"><a href="#파이어뱃-현재-체력은-25-입니다-1" class="headerlink" title="파이어뱃 : 현재 체력은 25 입니다."></a>파이어뱃 : 현재 체력은 25 입니다.</h6><h6 id="파이어뱃-25-데미지를-입었습니다-3"><a href="#파이어뱃-25-데미지를-입었습니다-3" class="headerlink" title="파이어뱃 : 25 데미지를 입었습니다."></a>파이어뱃 : 25 데미지를 입었습니다.</h6><h6 id="파이어뱃-현재-체력은-0-입니다-1"><a href="#파이어뱃-현재-체력은-0-입니다-1" class="headerlink" title="파이어뱃 : 현재 체력은 0 입니다."></a>파이어뱃 : 현재 체력은 0 입니다.</h6><h6 id="파이어뱃-파괴되었습니다-1"><a href="#파이어뱃-파괴되었습니다-1" class="headerlink" title="파이어뱃 : 파괴되었습니다."></a>파이어뱃 : 파괴되었습니다.</h6></details>
 
 <p><br><br></p>
 <p><strong>6. 다중상속</strong></p>
-<h5 id="▷-입력-5"><a href="#▷-입력-5" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/img/multi.png" alt="다중상속"></p>
+<h5 id="▷-입력-5"><a href="#▷-입력-5" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 다중상속</span>
+<span class="token comment" spellcheck="true"># 부모 클래스를 둘 이상을 상속받는 것</span>
+
+<span class="token comment" spellcheck="true"># 일반 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 부모 클래스</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+
+<span class="token comment" spellcheck="true"># 공격 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">AttackUnit</span><span class="token punctuation">(</span>Unit<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># Unit을 상속받는 AttackUnit = 자식 클래스</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Unit<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Unit의 생성자 호출</span>
+        self<span class="token punctuation">.</span>damage <span class="token operator">=</span> damage
+
+    <span class="token keyword">def</span> <span class="token function">attack</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격할 때</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">damaged</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격받았을 때</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 데미지를 입었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>hp <span class="token operator">-=</span> damage
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : 현재 체력은 {1} 입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>hp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>hp <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : 파괴되었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 드랍쉽 : 공중 유닛, 수송기. 마린 / 파이어뱃 / 탱크 등을 수송. 공격 X</span>
+<span class="token comment" spellcheck="true"># 날 수 있는 기능만을 가진 클래스</span>
+<span class="token keyword">class</span> <span class="token class-name">Flyable</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> flying_speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>flying_speed <span class="token operator">=</span> flying_speed
+
+    <span class="token keyword">def</span> <span class="token function">fly</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 날아갑니다. [속도 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>flying_speed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 공중 공격 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">FlyableAttackUnit</span><span class="token punctuation">(</span>AttackUnit<span class="token punctuation">,</span> Flyable<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 다중 상속</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">,</span> flying_speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        AttackUnit<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span>
+        Flyable<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> flying_speed<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 발키리 : 공중 공격 유닛, 한 번에 14발 미사일 발사.</span>
+valkyrie <span class="token operator">=</span> FlyableAttackUnit<span class="token punctuation">(</span><span class="token string">"발키리"</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+valkyrie<span class="token punctuation">.</span>fly<span class="token punctuation">(</span>valkyrie<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">"3시"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
+<h6 id="발키리-3시-방향으로-날아갑니다-속도-5"><a href="#발키리-3시-방향으로-날아갑니다-속도-5" class="headerlink" title="발키리 : 3시 방향으로 날아갑니다. [속도 5]"></a>발키리 : 3시 방향으로 날아갑니다. [속도 5]</h6></details>
 
 <p><br><br></p>
 <p><strong>7. 메소드 오버라이딩</strong></p>
-<h5 id="▷-입력-6"><a href="#▷-입력-6" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="▷-입력-6"><a href="#▷-입력-6" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 메소드 오버라이딩</span>
+
+<span class="token comment" spellcheck="true"># 일반 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 부모 클래스</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+        self<span class="token punctuation">.</span>speed <span class="token operator">=</span> speed
+
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># move 함수 추가</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[지상 유닛 이동]"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 이동합니다. [속도 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>speed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 공격 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">AttackUnit</span><span class="token punctuation">(</span>Unit<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 자식 클래스</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> speed<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Unit<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> speed<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Unit의 생성자 호출</span>
+        self<span class="token punctuation">.</span>damage <span class="token operator">=</span> damage
+
+    <span class="token keyword">def</span> <span class="token function">attack</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격할 때</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">damaged</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 공격받았을 때</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 데미지를 입었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>hp <span class="token operator">-=</span> damage
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : 현재 체력은 {1} 입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>hp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>hp <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : 파괴되었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 드랍쉽 : 공중 유닛, 수송기. 마린 / 파이어뱃 / 탱크 등을 수송. 공격 X</span>
+<span class="token comment" spellcheck="true"># 날 수 있는 기능만을 가진 클래스</span>
+<span class="token keyword">class</span> <span class="token class-name">Flyable</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> flying_speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>flying_speed <span class="token operator">=</span> flying_speed
+
+    <span class="token keyword">def</span> <span class="token function">fly</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 날아갑니다. [속도 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>flying_speed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 공중 공격 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">FlyableAttackUnit</span><span class="token punctuation">(</span>AttackUnit<span class="token punctuation">,</span> Flyable<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">,</span> flying_speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        AttackUnit<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> damage<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 지상 speed 0</span>
+        Flyable<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> flying_speed<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 메소드 오버라이딩 </span>
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># move 함수 재정의</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[공중 유닛 이동]"</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>fly<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> location<span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 벌쳐 : 지상 유닛, 기동성 좋음</span>
+vulture <span class="token operator">=</span> AttackUnit<span class="token punctuation">(</span><span class="token string">"벌쳐"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 배틀크루저 : 공중 유닛, 체력 굉장히 좋음, 공격력 좋음</span>
+battlecruiser <span class="token operator">=</span> FlyableAttackUnit<span class="token punctuation">(</span><span class="token string">"배틀크루저"</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+vulture<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token string">"11시"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 지상 유닛인 경우 move 함수</span>
+battlecruiser<span class="token punctuation">.</span>fly<span class="token punctuation">(</span>battlecruiser<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">"9시"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 공중 유닛인 경우 fly 함수</span>
+<span class="token comment" spellcheck="true"># 유닛에 따라 이동 함수를 어떤 걸로 써야할지 일일이 확인해야 하는 번거로움</span>
+<span class="token comment" spellcheck="true"># → 메소드 오버라이딩을 활용</span>
+battlecruiser<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token string">"9시"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details>
+<h6 id="지상-유닛-이동"><a href="#지상-유닛-이동" class="headerlink" title="[지상 유닛 이동]"></a>[지상 유닛 이동]</h6><h6 id="벌쳐-11시-방향으로-이동합니다-속도-10"><a href="#벌쳐-11시-방향으로-이동합니다-속도-10" class="headerlink" title="벌쳐 : 11시 방향으로 이동합니다. [속도 10]"></a>벌쳐 : 11시 방향으로 이동합니다. [속도 10]</h6><h6 id="배틀크루저-9시-방향으로-날아갑니다-속도-3"><a href="#배틀크루저-9시-방향으로-날아갑니다-속도-3" class="headerlink" title="배틀크루저 : 9시 방향으로 날아갑니다. [속도 3]"></a>배틀크루저 : 9시 방향으로 날아갑니다. [속도 3]</h6><h6 id="공중-유닛-이동"><a href="#공중-유닛-이동" class="headerlink" title="[공중 유닛 이동]"></a>[공중 유닛 이동]</h6><h6 id="배틀크루저-9시-방향으로-날아갑니다-속도-3-1"><a href="#배틀크루저-9시-방향으로-날아갑니다-속도-3-1" class="headerlink" title="배틀크루저 : 9시 방향으로 날아갑니다. [속도 3]"></a>배틀크루저 : 9시 방향으로 날아갑니다. [속도 3]</h6></details>
 
 <p><br><br></p>
 <p><strong>8. pass</strong></p>
@@ -199,7 +339,7 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-3"><a href="#-3" class="headerlink" title=""></a></h6></details>
+<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>9. super</strong></p>
@@ -207,7 +347,7 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-4"><a href="#-4" class="headerlink" title=""></a></h6></details>
+<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>10. 스타크래프트 프로젝트 전반전</strong></p>
@@ -215,7 +355,7 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-5"><a href="#-5" class="headerlink" title=""></a></h6></details>
+<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>11. 스타크래프트 프로젝트 후반전</strong></p>
@@ -223,7 +363,7 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-6"><a href="#-6" class="headerlink" title=""></a></h6></details>
+<h6 id="-3"><a href="#-3" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>12. Quiz</strong></p>
@@ -232,4 +372,4 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-7"><a href="#-7" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<h6 id="-4"><a href="#-4" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
