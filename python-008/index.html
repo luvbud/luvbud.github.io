@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>파이썬 6시간 공부해보자 (8) - 클래스 · luvbud notebook</title><meta name="description" content="예정섹션 8. 클래스
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>파이썬 6시간 공부해보자 (8) - 클래스 · luvbud notebook</title><meta name="description" content="섹션 8. 클래스
 
 1. 클래스
 ▷ 입력'''
@@ -7,8 +7,10 @@ name = &quot;마린&quot; # 유닛의 이름
 hp = 40 # 유닛의 체력
 damage = 5 # 유닛의 공격력
 
-print(&quot;{0} 유닛이 생성되었습니다.&quot;.format(na"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>파이썬 6시간 공부해보자 (8) - 클래스</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-19</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/study/" title="study" class="a-tag">study</a><span>&nbsp;</span><a href="/tags/python/" title="python" class="a-tag">python</a><span>&nbsp;</span></span></p><p class="post-abstract"><h4 id="예정"><a href="#예정" class="headerlink" title="예정"></a>예정</h4><h4 id="섹션-8-클래스"><a href="#섹션-8-클래스" class="headerlink" title="섹션 8. 클래스"></a><strong>섹션 8. 클래스</strong></h4><br>
+print(&quot;{0} 유닛이 생성되었습니다.&quot;.format(name"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>파이썬 6시간 공부해보자 (8) - 클래스</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-19</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/study/" title="study" class="a-tag">study</a><span>&nbsp;</span><a href="/tags/python/" title="python" class="a-tag">python</a><span>&nbsp;</span></span></p><p class="post-abstract"><br>
+
+<h4 id="섹션-8-클래스"><a href="#섹션-8-클래스" class="headerlink" title="섹션 8. 클래스"></a><strong>섹션 8. 클래스</strong></h4><br>
 
 <p><strong>1. 클래스</strong></p>
 <h5 id="▷-입력"><a href="#▷-입력" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">'''
@@ -129,6 +131,7 @@ wraith2<span class="token punctuation">.</span>clocking <span class="token opera
 <p><br><br></p>
 <p><strong>4. 메소드</strong></p>
 <h5 id="▷-입력-3"><a href="#▷-입력-3" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 메소드</span>
+
 <span class="token comment" spellcheck="true"># 일반 유닛</span>
 <span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -162,7 +165,7 @@ firebat1<span class="token punctuation">.</span>attack<span class="token punctua
 
 <span class="token comment" spellcheck="true"># 공격 2번 받는다고 가정</span>
 firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
-firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
@@ -171,6 +174,7 @@ firebat1<span class="token punctuation">.</span>damaged<span class="token punctu
 <p><br><br></p>
 <p><strong>5. 상속</strong></p>
 <h5 id="▷-입력-4"><a href="#▷-입력-4" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 상속</span>
+
 <span class="token comment" spellcheck="true"># 일반 유닛</span>
 <span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -203,7 +207,7 @@ firebat1<span class="token punctuation">.</span>attack<span class="token punctua
 
 <span class="token comment" spellcheck="true"># 공격 2번 받는다고 가정</span>
 firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
-firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+firebat1<span class="token punctuation">.</span>damaged<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
@@ -335,19 +339,89 @@ battlecruiser<span class="token punctuation">.</span>move<span class="token punc
 
 <p><br><br></p>
 <p><strong>8. pass</strong></p>
-<h5 id="▷-입력-7"><a href="#▷-입력-7" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="▷-입력-7"><a href="#▷-입력-7" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># pass</span>
+
+<span class="token comment" spellcheck="true"># 일반 유닛</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 부모 클래스</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+        self<span class="token punctuation">.</span>speed <span class="token operator">=</span> speed
+
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># move 함수 추가</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[지상 유닛 이동]"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} : {1} 방향으로 이동합니다. [속도 {2}]"</span>\
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>speed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 건물</span>
+<span class="token keyword">class</span> <span class="token class-name">BuildingUnit</span><span class="token punctuation">(</span>Unit<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span> <span class="token comment" spellcheck="true"># 아무것도 안하고 일단 넘어간다는 의미</span>
+
+<span class="token comment" spellcheck="true"># 서플라이 디폿 : 건물, 1개 건물 = 8 유닛 생성 가능.</span>
+supply_depot <span class="token operator">=</span> BuildingUnit<span class="token punctuation">(</span><span class="token string">"서플라이 디폿"</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"7시"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">game_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[알림] 새로운 게임을 시작합니다."</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">game_over</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+game_start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+game_over<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
+<h6 id="알림-새로운-게임을-시작합니다"><a href="#알림-새로운-게임을-시작합니다" class="headerlink" title="[알림] 새로운 게임을 시작합니다."></a>[알림] 새로운 게임을 시작합니다.</h6></details>
 
 <p><br><br></p>
 <p><strong>9. super</strong></p>
-<h5 id="▷-입력-8"><a href="#▷-입력-8" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="▷-입력-8"><a href="#▷-입력-8" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># super</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Unit 생성자"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Flyable</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Flyable 생성자"</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 1)</span>
+<span class="token keyword">class</span> <span class="token class-name">FlyableUnit</span><span class="token punctuation">(</span>Unit<span class="token punctuation">,</span> Flyable<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># self (X)</span>
+
+<span class="token comment" spellcheck="true"># 드랍쉽 : 공중 유닛, 수송기. 마린 / 파이어뱃 / 탱크 등을 수송. 공격 X</span>
+dropship <span class="token operator">=</span> FlyableUnit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 2)</span>
+<span class="token keyword">class</span> <span class="token class-name">FlyableUnit</span><span class="token punctuation">(</span>Flyable<span class="token punctuation">,</span> Unit<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># self (X)</span>
+
+dropship <span class="token operator">=</span> FlyableUnit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 두 개 이상의 부모 클래스를 다중 상속받을 때에는</span>
+<span class="token comment" spellcheck="true"># super를 쓰면 맨 첫번째로 상속받는 클래스에 대해서만 적용됨</span>
+
+
+<span class="token comment" spellcheck="true"># 3)</span>
+<span class="token keyword">class</span> <span class="token class-name">FlyableUnit</span><span class="token punctuation">(</span>Flyable<span class="token punctuation">,</span> Unit<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># super().__init__() # self (X)</span>
+        Unit<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        Flyable<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+
+dropship <span class="token operator">=</span> FlyableUnit<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
+<h6 id="Unit-생성자"><a href="#Unit-생성자" class="headerlink" title="Unit 생성자"></a>Unit 생성자</h6><br>
+
+<h6 id="Flyable-생성자"><a href="#Flyable-생성자" class="headerlink" title="Flyable 생성자"></a>Flyable 생성자</h6><br>
+
+<h6 id="Unit-생성자-1"><a href="#Unit-생성자-1" class="headerlink" title="Unit 생성자"></a>Unit 생성자</h6><h6 id="Flyable-생성자-1"><a href="#Flyable-생성자-1" class="headerlink" title="Flyable 생성자"></a>Flyable 생성자</h6></details>
 
 <p><br><br></p>
 <p><strong>10. 스타크래프트 프로젝트 전반전</strong></p>
@@ -355,7 +429,7 @@ battlecruiser<span class="token punctuation">.</span>move<span class="token punc
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details>
+<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>11. 스타크래프트 프로젝트 후반전</strong></p>
@@ -363,7 +437,7 @@ battlecruiser<span class="token punctuation">.</span>move<span class="token punc
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-3"><a href="#-3" class="headerlink" title=""></a></h6></details>
+<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>12. Quiz</strong></p>
@@ -372,4 +446,4 @@ battlecruiser<span class="token punctuation">.</span>move<span class="token punc
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-4"><a href="#-4" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
