@@ -73,9 +73,9 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 
 <p><br><br></p>
 <p><strong>2. <strong>init</strong></strong></p>
-<h5 id="▷-입력-1"><a href="#▷-입력-1" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 파이썬에서 쓰이는 생성자. </span>
-        <span class="token comment" spellcheck="true"># 멤버변수 = 클래스 내에서 정의된 변수</span>
+<h5 id="▷-입력-1"><a href="#▷-입력-1" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># __init__</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 파이썬에서 쓰이는 생성자.</span>
         self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
         self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
         self<span class="token punctuation">.</span>damage <span class="token operator">=</span> damage
@@ -93,11 +93,38 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 
 <p><br><br></p>
 <p><strong>3. 멤버변수</strong></p>
-<h5 id="▷-입력-2"><a href="#▷-입력-2" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="▷-입력-2"><a href="#▷-입력-2" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 멤버변수</span>
+<span class="token keyword">class</span> <span class="token class-name">Unit</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> damage<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 파이썬에서 쓰이는 생성자.</span>
+        <span class="token comment" spellcheck="true"># 멤버변수 = 클래스 내에서 정의된 변수</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>hp <span class="token operator">=</span> hp
+        self<span class="token punctuation">.</span>damage <span class="token operator">=</span> damage
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} 유닛이 생성되었습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"체력 {0}, 공격력 {1}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>hp<span class="token punctuation">,</span> self<span class="token punctuation">.</span>damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 레이스 : 공중 유닛, 비행기. 클로킹 (상대방에게 보이지 않음)</span>
+wraith1 <span class="token operator">=</span> Unit<span class="token punctuation">(</span><span class="token string">"레이스"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"유닛 이름 : {0}, 공격력 : {1}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>wraith1<span class="token punctuation">.</span>name<span class="token punctuation">,</span> wraith1<span class="token punctuation">.</span>damage<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 마인드 컨트롤 : 상대방 유닛을 내 것으로 만드는 것 (빼앗음)</span>
+wraith2 <span class="token operator">=</span> Unit<span class="token punctuation">(</span><span class="token string">"빼앗은 레이스"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+wraith2<span class="token punctuation">.</span>clocking <span class="token operator">=</span> <span class="token boolean">True</span> <span class="token comment" spellcheck="true"># clocking 이라는 변수는 Unit 클래스 내에 없지만 클래스 외부에서 clocking 이라는 변수를 추가로 만들어 wraith2에 할당함</span>
+<span class="token comment" spellcheck="true"># 클래스 외부에서 내가 원하는 어떤 변수에 대해서 확장할 수 있음</span>
+<span class="token comment" spellcheck="true"># 확장된 변수는 내가 확장을 한 객체에 대해서만 적용이 됨</span>
+<span class="token comment" spellcheck="true"># 기존에 있던 다른 객체에 대해서는 적용이 안 됨</span>
+
+<span class="token keyword">if</span> wraith2<span class="token punctuation">.</span>clocking <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0}는 현재 클로킹 상태입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>wraith2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># if wraith1.clocking == True: # 적용 불가. 오류남.</span>
+<span class="token comment" spellcheck="true">#     print("{0}는 현재 클로킹 상태입니다.".format(wraith2.name))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
+<h6 id="레이스-유닛이-생성되었습니다"><a href="#레이스-유닛이-생성되었습니다" class="headerlink" title="레이스 유닛이 생성되었습니다."></a>레이스 유닛이 생성되었습니다.</h6><h6 id="체력-80-공격력-5"><a href="#체력-80-공격력-5" class="headerlink" title="체력 80, 공격력 5"></a>체력 80, 공격력 5</h6><h6 id="유닛-이름-레이스-공격력-5"><a href="#유닛-이름-레이스-공격력-5" class="headerlink" title="유닛 이름 : 레이스, 공격력 : 5"></a>유닛 이름 : 레이스, 공격력 : 5</h6><h6 id="빼앗은-레이스-유닛이-생성되었습니다"><a href="#빼앗은-레이스-유닛이-생성되었습니다" class="headerlink" title="빼앗은 레이스 유닛이 생성되었습니다."></a>빼앗은 레이스 유닛이 생성되었습니다.</h6><h6 id="체력-80-공격력-5-1"><a href="#체력-80-공격력-5-1" class="headerlink" title="체력 80, 공격력 5"></a>체력 80, 공격력 5</h6><br>
+
+<h6 id="빼앗은-레이스는-현재-클로킹-상태입니다"><a href="#빼앗은-레이스는-현재-클로킹-상태입니다" class="headerlink" title="빼앗은 레이스는 현재 클로킹 상태입니다."></a>빼앗은 레이스는 현재 클로킹 상태입니다.</h6></details>
 
 <p><br><br></p>
 <p><strong>4. 메소드</strong></p>
@@ -105,7 +132,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
+<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>5. 상속</strong></p>
@@ -113,7 +140,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details>
+<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>6. 다중상속</strong></p>
@@ -121,7 +148,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-3"><a href="#-3" class="headerlink" title=""></a></h6></details>
+<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>7. 메소드 오버라이딩</strong></p>
@@ -129,7 +156,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-4"><a href="#-4" class="headerlink" title=""></a></h6></details>
+<h6 id="-3"><a href="#-3" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>8. pass</strong></p>
@@ -137,7 +164,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-5"><a href="#-5" class="headerlink" title=""></a></h6></details>
+<h6 id="-4"><a href="#-4" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>9. super</strong></p>
@@ -145,7 +172,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-6"><a href="#-6" class="headerlink" title=""></a></h6></details>
+<h6 id="-5"><a href="#-5" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>10. 스타크래프트 프로젝트 전반전</strong></p>
@@ -153,7 +180,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-7"><a href="#-7" class="headerlink" title=""></a></h6></details>
+<h6 id="-6"><a href="#-6" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>11. 스타크래프트 프로젝트 후반전</strong></p>
@@ -161,7 +188,7 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-8"><a href="#-8" class="headerlink" title=""></a></h6></details>
+<h6 id="-7"><a href="#-7" class="headerlink" title=""></a></h6></details>
 
 <p><br><br></p>
 <p><strong>12. Quiz</strong></p>
@@ -170,4 +197,4 @@ tank <span class="token operator">=</span> Unit<span class="token punctuation">(
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id="-9"><a href="#-9" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<h6 id="-8"><a href="#-8" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
