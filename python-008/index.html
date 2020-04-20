@@ -424,26 +424,43 @@ dropship <span class="token operator">=</span> FlyableUnit<span class="token pun
 <h6 id="Unit-생성자-1"><a href="#Unit-생성자-1" class="headerlink" title="Unit 생성자"></a>Unit 생성자</h6><h6 id="Flyable-생성자-1"><a href="#Flyable-생성자-1" class="headerlink" title="Flyable 생성자"></a>Flyable 생성자</h6></details>
 
 <p><br><br></p>
-<p><strong>10. 스타크래프트 프로젝트 전반전</strong></p>
-<h5 id="▷-입력-9"><a href="#▷-입력-9" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>10. Quiz</strong></p>
+<h5 id="▷-입력-9"><a href="#▷-입력-9" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz 8.</span>
+<span class="token comment" spellcheck="true"># 주어진 코드를 활용하여 부동산 프로그램을 작성하시오.</span>
+
+<span class="token comment" spellcheck="true"># (출력 예제)</span>
+<span class="token comment" spellcheck="true"># 총 3대의 매물이 있습니다.</span>
+<span class="token comment" spellcheck="true"># 강남 아파트 매매 10억 2010년</span>
+<span class="token comment" spellcheck="true"># 마포 오피스텔 전세 5억 2007년</span>
+<span class="token comment" spellcheck="true"># 송파 빌라 월세 500/50 2000년</span>
+
+<span class="token comment" spellcheck="true"># [코드]</span>
+<span class="token keyword">class</span> <span class="token class-name">House</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 매물 초기화</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> location<span class="token punctuation">,</span> house_type<span class="token punctuation">,</span> deal_type<span class="token punctuation">,</span> price<span class="token punctuation">,</span> completion_year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>location <span class="token operator">=</span> location
+        self<span class="token punctuation">.</span>house_type <span class="token operator">=</span> house_type
+        self<span class="token punctuation">.</span>deal_type <span class="token operator">=</span> deal_type
+        self<span class="token punctuation">.</span>price <span class="token operator">=</span> price
+        self<span class="token punctuation">.</span>completion_year <span class="token operator">=</span> completion_year
+
+    <span class="token comment" spellcheck="true"># 매물 정보 표시</span>
+    <span class="token keyword">def</span> <span class="token function">show_detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>location<span class="token punctuation">,</span> self<span class="token punctuation">.</span>house_type<span class="token punctuation">,</span> self<span class="token punctuation">.</span>deal_type<span class="token punctuation">,</span> self<span class="token punctuation">.</span>price<span class="token punctuation">,</span> self<span class="token punctuation">.</span>completion_year<span class="token punctuation">)</span>
+
+houses <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+h1 <span class="token operator">=</span> House<span class="token punctuation">(</span><span class="token string">"강남"</span><span class="token punctuation">,</span> <span class="token string">"아파트"</span><span class="token punctuation">,</span> <span class="token string">"매매"</span><span class="token punctuation">,</span> <span class="token string">"10억"</span><span class="token punctuation">,</span> <span class="token string">"2010년"</span><span class="token punctuation">)</span>
+h2 <span class="token operator">=</span> House<span class="token punctuation">(</span><span class="token string">"마포"</span><span class="token punctuation">,</span> <span class="token string">"오피스텔"</span><span class="token punctuation">,</span> <span class="token string">"전세"</span><span class="token punctuation">,</span> <span class="token string">"5억"</span><span class="token punctuation">,</span> <span class="token string">"2007년"</span><span class="token punctuation">)</span>
+h3 <span class="token operator">=</span> House<span class="token punctuation">(</span><span class="token string">"송파"</span><span class="token punctuation">,</span> <span class="token string">"빌라"</span><span class="token punctuation">,</span> <span class="token string">"월세"</span><span class="token punctuation">,</span> <span class="token string">"500/50"</span><span class="token punctuation">,</span> <span class="token string">"2000년"</span><span class="token punctuation">)</span>
+
+houses<span class="token punctuation">.</span>append<span class="token punctuation">(</span>h1<span class="token punctuation">)</span>
+houses<span class="token punctuation">.</span>append<span class="token punctuation">(</span>h2<span class="token punctuation">)</span>
+houses<span class="token punctuation">.</span>append<span class="token punctuation">(</span>h3<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"총 {0}대의 매물이 있습니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>len<span class="token punctuation">(</span>houses<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> house <span class="token keyword">in</span> houses<span class="token punctuation">:</span>
+    house<span class="token punctuation">.</span>show_detail<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details>
-
-<p><br><br></p>
-<p><strong>11. 스타크래프트 프로젝트 후반전</strong></p>
-<h5 id="▷-입력-10"><a href="#▷-입력-10" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<details>
-<summary style="font-size: 16px;">출력</summary>
-
-<h6 id="-1"><a href="#-1" class="headerlink" title=""></a></h6></details>
-
-<p><br><br></p>
-<p><strong>12. Quiz</strong></p>
-<h5 id="▷-입력-11"><a href="#▷-입력-11" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz 8.</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<details>
-<summary style="font-size: 16px;">출력</summary>
-
-<h6 id="-2"><a href="#-2" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<h6 id="총-3대의-매물이-있습니다"><a href="#총-3대의-매물이-있습니다" class="headerlink" title="총 3대의 매물이 있습니다."></a>총 3대의 매물이 있습니다.</h6><h6 id="강남-아파트-매매-10억-2010년"><a href="#강남-아파트-매매-10억-2010년" class="headerlink" title="강남 아파트 매매 10억 2010년"></a>강남 아파트 매매 10억 2010년</h6><h6 id="마포-오피스텔-전세-5억-2007년"><a href="#마포-오피스텔-전세-5억-2007년" class="headerlink" title="마포 오피스텔 전세 5억 2007년"></a>마포 오피스텔 전세 5억 2007년</h6><h6 id="송파-빌라-월세-500-50-2000년"><a href="#송파-빌라-월세-500-50-2000년" class="headerlink" title="송파 빌라 월세 500/50 2000년"></a>송파 빌라 월세 500/50 2000년</h6></details></p></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/python-008-1/" title="파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트"><i class="fa fa-angle-double-left"></i>&nbsp;Prev: 파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-007/" title="파이썬 6시간 공부해보자 (7) - 입출력">Next: 파이썬 6시간 공부해보자 (7) - 입출력&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
