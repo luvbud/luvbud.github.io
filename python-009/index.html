@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>파이썬 6시간 공부해보자 (9) - 예외처리 · luvbud notebook</title><meta name="description" content="섹션 9. 예외처리
+
+1. 예외처리
+▷ 입력# 예외처리
+# 강제 종료됨을 막음으로써 프로그램의 완성도를 높일 수 있음
+try: 
+    print(&quot;나누기 전용 계산기입니다.&quot;)
+    nums = []
+    nums.append(int(input(&quot;첫 번째 숫자를 "><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>파이썬 6시간 공부해보자 (9) - 예외처리</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-20</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/study/" title="study" class="a-tag">study</a><span>&nbsp;</span><a href="/tags/python/" title="python" class="a-tag">python</a><span>&nbsp;</span></span></p><p class="post-abstract"><br>
+
+<h4 id="섹션-9-예외처리"><a href="#섹션-9-예외처리" class="headerlink" title="섹션 9. 예외처리"></a><strong>섹션 9. 예외처리</strong></h4><br>
+
+<p><strong>1. 예외처리</strong></p>
+<h5 id="▷-입력"><a href="#▷-입력" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 예외처리</span>
+<span class="token comment" spellcheck="true"># 강제 종료됨을 막음으로써 프로그램의 완성도를 높일 수 있음</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span> 
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나누기 전용 계산기입니다."</span><span class="token punctuation">)</span>
+    nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    nums<span class="token punctuation">.</span>append<span class="token punctuation">(</span>int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"첫 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    nums<span class="token punctuation">.</span>append<span class="token punctuation">(</span>int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"두 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># nums.append(int(nums[0] / nums[1]))</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} / {1} = {2}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"에러! 잘못된 값을 입력하였습니다."</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ZeroDivisionError <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> err<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 나머지 모든 에러 처리</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"알 수 없는 에러가 발생하였습니다."</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="나누기-전용-계산기입니다"><a href="#나누기-전용-계산기입니다" class="headerlink" title="나누기 전용 계산기입니다."></a>나누기 전용 계산기입니다.</h6><h6 id="첫-번째-숫자를-입력하세요-6"><a href="#첫-번째-숫자를-입력하세요-6" class="headerlink" title="첫 번째 숫자를 입력하세요 : 6"></a>첫 번째 숫자를 입력하세요 : 6</h6><h6 id="두-번째-숫자를-입력하세요-3"><a href="#두-번째-숫자를-입력하세요-3" class="headerlink" title="두 번째 숫자를 입력하세요 : 3"></a>두 번째 숫자를 입력하세요 : 3</h6><h6 id="알-수-없는-에러가-발생하였습니다"><a href="#알-수-없는-에러가-발생하였습니다" class="headerlink" title="알 수 없는 에러가 발생하였습니다."></a>알 수 없는 에러가 발생하였습니다.</h6><h6 id="list-index-out-of-range"><a href="#list-index-out-of-range" class="headerlink" title="list index out of range"></a>list index out of range</h6></details>
+
+<p><br><br></p>
+<p><strong>2. 에러 발생시키기</strong></p>
+<h5 id="▷-입력-1"><a href="#▷-입력-1" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 에러 발생시키기</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"한 자리 숫자 나누기 전용 계산기입니다."</span><span class="token punctuation">)</span>
+    num1 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"첫 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    num2 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"두 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> num1 <span class="token operator">>=</span> <span class="token number">10</span> <span class="token operator">or</span> num2 <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 의도적인 에러 발생</span>
+        <span class="token keyword">raise</span> ValueError
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} / {1} = {2}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> int<span class="token punctuation">(</span>num1 <span class="token operator">/</span> num2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"잘못된 값을 입력하였습니다. 한 자리 숫자만 입력하세요."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="한-자리-숫자-나누기-전용-계산기입니다"><a href="#한-자리-숫자-나누기-전용-계산기입니다" class="headerlink" title="한 자리 숫자 나누기 전용 계산기입니다."></a>한 자리 숫자 나누기 전용 계산기입니다.</h6><h6 id="첫-번째-숫자를-입력하세요-10"><a href="#첫-번째-숫자를-입력하세요-10" class="headerlink" title="첫 번째 숫자를 입력하세요 : 10"></a>첫 번째 숫자를 입력하세요 : 10</h6><h6 id="두-번째-숫자를-입력하세요-5"><a href="#두-번째-숫자를-입력하세요-5" class="headerlink" title="두 번째 숫자를 입력하세요 : 5"></a>두 번째 숫자를 입력하세요 : 5</h6><h6 id="잘못된-값을-입력하였습니다-한-자리-숫자만-입력하세요"><a href="#잘못된-값을-입력하였습니다-한-자리-숫자만-입력하세요" class="headerlink" title="잘못된 값을 입력하였습니다. 한 자리 숫자만 입력하세요."></a>잘못된 값을 입력하였습니다. 한 자리 숫자만 입력하세요.</h6></details>
+
+<p><br><br></p>
+<p><strong>3. 사용자 정의 예외처리</strong></p>
+<h5 id="▷-입력-2"><a href="#▷-입력-2" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 사용자 정의 예외처리</span>
+<span class="token keyword">class</span> <span class="token class-name">BigNumberError</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>msg
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"한 자리 숫자 나누기 전용 계산기입니다."</span><span class="token punctuation">)</span>
+    num1 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"첫 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    num2 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"두 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> num1 <span class="token operator">>=</span> <span class="token number">10</span> <span class="token operator">or</span> num2 <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 의도적인 에러 발생</span>
+        <span class="token keyword">raise</span> BigNumberError<span class="token punctuation">(</span><span class="token string">"입력값 : {0}, {1}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} / {1} = {2}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> int<span class="token punctuation">(</span>num1 <span class="token operator">/</span> num2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"잘못된 값을 입력하였습니다. 한 자리 숫자만 입력하세요."</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> BigNumberError <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"에러가 발생하였습니다. 한 자리 숫자만 입력하세요."</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="한-자리-숫자-나누기-전용-계산기입니다-1"><a href="#한-자리-숫자-나누기-전용-계산기입니다-1" class="headerlink" title="한 자리 숫자 나누기 전용 계산기입니다."></a>한 자리 숫자 나누기 전용 계산기입니다.</h6><h6 id="첫-번째-숫자를-입력하세요-10-1"><a href="#첫-번째-숫자를-입력하세요-10-1" class="headerlink" title="첫 번째 숫자를 입력하세요 : 10"></a>첫 번째 숫자를 입력하세요 : 10</h6><h6 id="두-번째-숫자를-입력하세요-5-1"><a href="#두-번째-숫자를-입력하세요-5-1" class="headerlink" title="두 번째 숫자를 입력하세요 : 5"></a>두 번째 숫자를 입력하세요 : 5</h6><h6 id="에러가-발생하였습니다-한-자리-숫자만-입력하세요"><a href="#에러가-발생하였습니다-한-자리-숫자만-입력하세요" class="headerlink" title="에러가 발생하였습니다. 한 자리 숫자만 입력하세요."></a>에러가 발생하였습니다. 한 자리 숫자만 입력하세요.</h6><h6 id="입력값-10-5"><a href="#입력값-10-5" class="headerlink" title="입력값 : 10, 5"></a>입력값 : 10, 5</h6></details>
+
+<p><br><br></p>
+<p><strong>4. finally</strong></p>
+<h5 id="▷-입력-3"><a href="#▷-입력-3" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># finally</span>
+<span class="token comment" spellcheck="true"># 정상적 실행 혹은 오류 발생과 상관없이 무조건 실행되는 부분</span>
+<span class="token keyword">class</span> <span class="token class-name">BigNumberError</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>msg
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"한 자리 숫자 나누기 전용 계산기입니다."</span><span class="token punctuation">)</span>
+    num1 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"첫 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    num2 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"두 번째 숫자를 입력하세요 : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> num1 <span class="token operator">>=</span> <span class="token number">10</span> <span class="token operator">or</span> num2 <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 의도적인 에러 발생</span>
+        <span class="token keyword">raise</span> BigNumberError<span class="token punctuation">(</span><span class="token string">"입력값 : {0}, {1}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0} / {1} = {2}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> int<span class="token punctuation">(</span>num1 <span class="token operator">/</span> num2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"잘못된 값을 입력하였습니다. 한 자리 숫자만 입력하세요."</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> BigNumberError <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"에러가 발생하였습니다. 한 자리 숫자만 입력하세요."</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span> 
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"계산기를 이용해주셔서 감사합니다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="Case-1"><a href="#Case-1" class="headerlink" title="# Case 1."></a># Case 1.</h6><h6 id="한-자리-숫자-나누기-전용-계산기입니다-2"><a href="#한-자리-숫자-나누기-전용-계산기입니다-2" class="headerlink" title="한 자리 숫자 나누기 전용 계산기입니다."></a>한 자리 숫자 나누기 전용 계산기입니다.</h6><h6 id="첫-번째-숫자를-입력하세요-6-1"><a href="#첫-번째-숫자를-입력하세요-6-1" class="headerlink" title="첫 번째 숫자를 입력하세요 : 6"></a>첫 번째 숫자를 입력하세요 : 6</h6><h6 id="두-번째-숫자를-입력하세요-3-1"><a href="#두-번째-숫자를-입력하세요-3-1" class="headerlink" title="두 번째 숫자를 입력하세요 : 3"></a>두 번째 숫자를 입력하세요 : 3</h6><h6 id="6-3-2"><a href="#6-3-2" class="headerlink" title="6 / 3 = 2"></a>6 / 3 = 2</h6><h6 id="계산기를-이용해주셔서-감사합니다"><a href="#계산기를-이용해주셔서-감사합니다" class="headerlink" title="계산기를 이용해주셔서 감사합니다."></a>계산기를 이용해주셔서 감사합니다.</h6><br>
+
+<h6 id="Case-2"><a href="#Case-2" class="headerlink" title="# Case 2."></a># Case 2.</h6><h6 id="한-자리-숫자-나누기-전용-계산기입니다-3"><a href="#한-자리-숫자-나누기-전용-계산기입니다-3" class="headerlink" title="한 자리 숫자 나누기 전용 계산기입니다."></a>한 자리 숫자 나누기 전용 계산기입니다.</h6><h6 id="첫-번째-숫자를-입력하세요-10-2"><a href="#첫-번째-숫자를-입력하세요-10-2" class="headerlink" title="첫 번째 숫자를 입력하세요 : 10"></a>첫 번째 숫자를 입력하세요 : 10</h6><h6 id="두-번째-숫자를-입력하세요-5-2"><a href="#두-번째-숫자를-입력하세요-5-2" class="headerlink" title="두 번째 숫자를 입력하세요 : 5"></a>두 번째 숫자를 입력하세요 : 5</h6><h6 id="에러가-발생하였습니다-한-자리-숫자만-입력하세요-1"><a href="#에러가-발생하였습니다-한-자리-숫자만-입력하세요-1" class="headerlink" title="에러가 발생하였습니다. 한 자리 숫자만 입력하세요."></a>에러가 발생하였습니다. 한 자리 숫자만 입력하세요.</h6><h6 id="입력값-10-5-1"><a href="#입력값-10-5-1" class="headerlink" title="입력값 : 10, 5"></a>입력값 : 10, 5</h6><h6 id="계산기를-이용해주셔서-감사합니다-1"><a href="#계산기를-이용해주셔서-감사합니다-1" class="headerlink" title="계산기를 이용해주셔서 감사합니다."></a>계산기를 이용해주셔서 감사합니다.</h6></details>
+
+<p><br><br></p>
+<p><strong>5. Quiz</strong></p>
+<h5 id="▷-입력-4"><a href="#▷-입력-4" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz 9.</span>
+<span class="token comment" spellcheck="true"># 동네에 항상 대기 손님이 있는 맛있는 치킨집이 있습니다.</span>
+<span class="token comment" spellcheck="true"># 대기 손님의 치킨 요리 시간을 줄이고자 자동 주문 시스템을 제작하였습니다.</span>
+<span class="token comment" spellcheck="true"># 시스템 코드를 확인하고 적절한 예외처리 구문을 넣으시오.</span>
+
+<span class="token comment" spellcheck="true"># 조건1 : 1보다 작거나 숫자가 아닌 입력값이 들어올 때는 ValueError 로 처리</span>
+<span class="token comment" spellcheck="true">#         출력 메시지 : "잘못된 값을 입력하였습니다."</span>
+<span class="token comment" spellcheck="true"># 조건2 : 대기 손님이 주문할 수 있는 총 치킨량은 10마리로 한정</span>
+<span class="token comment" spellcheck="true">#         치킨 소진 시 사용자 정의 에러[SoldOutError]를 발생시키고 프로그램 종료</span>
+<span class="token comment" spellcheck="true">#         출력 메시지 : "재고가 소진되어 더 이상 주문을 받지 않습니다."</span>
+
+<span class="token comment" spellcheck="true"># [코드]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-008-1/" title="파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트">Next: 파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
