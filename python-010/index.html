@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>파이썬 6시간 공부해보자 (10) - 모듈과 패키지 · luvbud notebook</title><meta name="description" content="섹션 10. 모듈과 패키지
+
+1. 모듈
+▷ 입력# theater_module.py
+
+# 일반 가격
+def price(people):
+    print(&quot;{0}명 가격은 {1}원 입니다.&quot;.format(people, people * 10000))
+
+# 조조 할인 가격
+d"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>파이썬 6시간 공부해보자 (10) - 모듈과 패키지</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-21</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/study/" title="study" class="a-tag">study</a><span>&nbsp;</span><a href="/tags/python/" title="python" class="a-tag">python</a><span>&nbsp;</span></span></p><p class="post-abstract"><br>
+
+<h4 id="섹션-10-모듈과-패키지"><a href="#섹션-10-모듈과-패키지" class="headerlink" title="섹션 10. 모듈과 패키지"></a><strong>섹션 10. 모듈과 패키지</strong></h4><br>
+
+<p><strong>1. 모듈</strong></p>
+<h5 id="▷-입력"><a href="#▷-입력" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># theater_module.py</span>
+
+<span class="token comment" spellcheck="true"># 일반 가격</span>
+<span class="token keyword">def</span> <span class="token function">price</span><span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0}명 가격은 {1}원 입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>people<span class="token punctuation">,</span> people <span class="token operator">*</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 조조 할인 가격</span>
+<span class="token keyword">def</span> <span class="token function">price_morning</span><span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0}명 조조 할인 가격은 {1}원 입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>people<span class="token punctuation">,</span> people <span class="token operator">*</span> <span class="token number">6000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 군인 할인 가격</span>
+<span class="token keyword">def</span> <span class="token function">price_soldier</span><span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0}명 군인 할인 가격은 {1}원 입니다."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>people<span class="token punctuation">,</span> people <span class="token operator">*</span> <span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 모듈</span>
+
+<span class="token comment" spellcheck="true"># Case 1.</span>
+<span class="token keyword">import</span> theater_module
+theater_module<span class="token punctuation">.</span>price<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 3명이 영화 보러 갔을 때 가격</span>
+theater_module<span class="token punctuation">.</span>price_morning<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 4명이 조조 할인 영화 보러 갔을 때</span>
+theater_module<span class="token punctuation">.</span>price_soldier<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 5명 군인이 영화 보러 갔을 때</span>
+
+<span class="token comment" spellcheck="true"># Case 2.</span>
+<span class="token keyword">import</span> theater_module <span class="token keyword">as</span> mv
+mv<span class="token punctuation">.</span>price<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+mv<span class="token punctuation">.</span>price_morning<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+mv<span class="token punctuation">.</span>price_soldier<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Case 3.</span>
+<span class="token keyword">from</span> theater_module <span class="token keyword">import</span> <span class="token operator">*</span>
+price<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+price_morning<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+price_soldier<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Case 4.</span>
+<span class="token keyword">from</span> theater_module <span class="token keyword">import</span> price<span class="token punctuation">,</span> price_morning
+price<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+price_morning<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># price_soldier(7) # 오류</span>
+
+<span class="token comment" spellcheck="true"># Case 5.</span>
+<span class="token keyword">from</span> theater_module <span class="token keyword">import</span> price_soldier <span class="token keyword">as</span> price
+price<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="Case-1"><a href="#Case-1" class="headerlink" title="# Case 1."></a># Case 1.</h6><h6 id="3명-가격은-30000원-입니다"><a href="#3명-가격은-30000원-입니다" class="headerlink" title="3명 가격은 30000원 입니다."></a>3명 가격은 30000원 입니다.</h6><h6 id="4명-조조-할인-가격은-24000원-입니다"><a href="#4명-조조-할인-가격은-24000원-입니다" class="headerlink" title="4명 조조 할인 가격은 24000원 입니다."></a>4명 조조 할인 가격은 24000원 입니다.</h6><h6 id="5명-군인-할인-가격은-20000원-입니다"><a href="#5명-군인-할인-가격은-20000원-입니다" class="headerlink" title="5명 군인 할인 가격은 20000원 입니다."></a>5명 군인 할인 가격은 20000원 입니다.</h6><br>
+
+<h6 id="Case-2"><a href="#Case-2" class="headerlink" title="# Case 2."></a># Case 2.</h6><h6 id="3명-가격은-30000원-입니다-1"><a href="#3명-가격은-30000원-입니다-1" class="headerlink" title="3명 가격은 30000원 입니다."></a>3명 가격은 30000원 입니다.</h6><h6 id="4명-조조-할인-가격은-24000원-입니다-1"><a href="#4명-조조-할인-가격은-24000원-입니다-1" class="headerlink" title="4명 조조 할인 가격은 24000원 입니다."></a>4명 조조 할인 가격은 24000원 입니다.</h6><h6 id="5명-군인-할인-가격은-20000원-입니다-1"><a href="#5명-군인-할인-가격은-20000원-입니다-1" class="headerlink" title="5명 군인 할인 가격은 20000원 입니다."></a>5명 군인 할인 가격은 20000원 입니다.</h6><br>
+
+<h6 id="Case-3"><a href="#Case-3" class="headerlink" title="# Case 3."></a># Case 3.</h6><h6 id="3명-가격은-30000원-입니다-2"><a href="#3명-가격은-30000원-입니다-2" class="headerlink" title="3명 가격은 30000원 입니다."></a>3명 가격은 30000원 입니다.</h6><h6 id="4명-조조-할인-가격은-24000원-입니다-2"><a href="#4명-조조-할인-가격은-24000원-입니다-2" class="headerlink" title="4명 조조 할인 가격은 24000원 입니다."></a>4명 조조 할인 가격은 24000원 입니다.</h6><h6 id="5명-군인-할인-가격은-20000원-입니다-2"><a href="#5명-군인-할인-가격은-20000원-입니다-2" class="headerlink" title="5명 군인 할인 가격은 20000원 입니다."></a>5명 군인 할인 가격은 20000원 입니다.</h6><br>
+
+<h6 id="Case-4"><a href="#Case-4" class="headerlink" title="# Case 4."></a># Case 4.</h6><h6 id="5명-가격은-50000원-입니다"><a href="#5명-가격은-50000원-입니다" class="headerlink" title="5명 가격은 50000원 입니다."></a>5명 가격은 50000원 입니다.</h6><h6 id="6명-조조-할인-가격은-36000원-입니다"><a href="#6명-조조-할인-가격은-36000원-입니다" class="headerlink" title="6명 조조 할인 가격은 36000원 입니다."></a>6명 조조 할인 가격은 36000원 입니다.</h6><br>
+
+<h6 id="Case-5"><a href="#Case-5" class="headerlink" title="# Case 5."></a># Case 5.</h6><h6 id="5명-군인-할인-가격은-20000원-입니다-3"><a href="#5명-군인-할인-가격은-20000원-입니다-3" class="headerlink" title="5명 군인 할인 가격은 20000원 입니다."></a>5명 군인 할인 가격은 20000원 입니다.</h6></details>
+
+<p><br><br></p>
+<p><strong>2. 패키지</strong></p>
+<h5 id="▷-입력-1"><a href="#▷-입력-1" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/__init__.py</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/thailand.py</span>
+<span class="token keyword">class</span> <span class="token class-name">ThailandPackage</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/vietnam.py</span>
+<span class="token keyword">class</span> <span class="token class-name">VietnamPackage</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[베트남 패키지 3박 5일] 다낭 효도 여행 60만원"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 패키지</span>
+<span class="token comment" spellcheck="true"># 여러 모듈을 모아놓은 집합.</span>
+
+<span class="token comment" spellcheck="true"># Case 1.</span>
+<span class="token keyword">import</span> travel<span class="token punctuation">.</span>thailand
+<span class="token comment" spellcheck="true"># import travel.thailand.ThailandPackage # (X) 오류</span>
+trip_to <span class="token operator">=</span> travel<span class="token punctuation">.</span>thailand<span class="token punctuation">.</span>ThailandPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip_to<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Case 2.</span>
+<span class="token keyword">from</span> travel<span class="token punctuation">.</span>thailand <span class="token keyword">import</span> ThailandPackage
+trip_to <span class="token operator">=</span> ThailandPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip_to<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Case 3.</span>
+<span class="token keyword">from</span> travel <span class="token keyword">import</span> vietnam
+trip_to <span class="token operator">=</span> vietnam<span class="token punctuation">.</span>VietnamPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip_to<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="Case-1-1"><a href="#Case-1-1" class="headerlink" title="# Case 1."></a># Case 1.</h6><h6 id="태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원"><a href="#태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원" class="headerlink" title="[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"></a>[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원</h6><br>
+
+<h6 id="Case-2-1"><a href="#Case-2-1" class="headerlink" title="# Case 2."></a># Case 2.</h6><h6 id="태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-1"><a href="#태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-1" class="headerlink" title="[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"></a>[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원</h6><br>
+
+<h6 id="Case-3-1"><a href="#Case-3-1" class="headerlink" title="# Case 3."></a># Case 3.</h6><h6 id="베트남-패키지-3박-5일-다낭-효도-여행-60만원"><a href="#베트남-패키지-3박-5일-다낭-효도-여행-60만원" class="headerlink" title="[베트남 패키지 3박 5일] 다낭 효도 여행 60만원"></a>[베트남 패키지 3박 5일] 다낭 효도 여행 60만원</h6></details>
+
+<p><br><br></p>
+<p><strong>3. __all__</strong></p>
+<h5 id="▷-입력-2"><a href="#▷-입력-2" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/__init__.py</span>
+__all__ <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"vietnam"</span><span class="token punctuation">,</span> <span class="token string">"thailand"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/thailand.py</span>
+<span class="token keyword">class</span> <span class="token class-name">ThailandPackage</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/vietnam.py</span>
+<span class="token keyword">class</span> <span class="token class-name">VietnamPackage</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[베트남 패키지 3박 5일] 다낭 효도 여행 60만원"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># __all__</span>
+<span class="token keyword">from</span> travel <span class="token keyword">import</span> <span class="token operator">*</span>
+trip1 <span class="token operator">=</span> thailand<span class="token punctuation">.</span>ThailandPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip2 <span class="token operator">=</span> vietnam<span class="token punctuation">.</span>VietnamPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip1<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip2<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-2"><a href="#태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-2" class="headerlink" title="[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"></a>[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원</h6><h6 id="베트남-패키지-3박-5일-다낭-효도-여행-60만원-1"><a href="#베트남-패키지-3박-5일-다낭-효도-여행-60만원-1" class="headerlink" title="[베트남 패키지 3박 5일] 다낭 효도 여행 60만원"></a>[베트남 패키지 3박 5일] 다낭 효도 여행 60만원</h6></details>
+
+<p><br><br></p>
+<p><strong>4. 모듈 직접 실행</strong></p>
+<h5 id="▷-입력-3"><a href="#▷-입력-3" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/__init__.py</span>
+__all__ <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"vietnam"</span><span class="token punctuation">,</span> <span class="token string">"thailand"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># /travel/thailand.py</span>
+<span class="token keyword">class</span> <span class="token class-name">ThailandPackage</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Thailand 모듈을 직접 실행"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"이 문장은 모듈을 직접 실행할 때만 실행돼요"</span><span class="token punctuation">)</span>
+    trip1 <span class="token operator">=</span> ThailandPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    trip1<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Thailand 외부에서 모듈 호출"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> travel <span class="token keyword">import</span> <span class="token operator">*</span>
+trip1 <span class="token operator">=</span> thailand<span class="token punctuation">.</span>ThailandPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip1<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="thailand-py-에서-직접-실행했을-때"><a href="#thailand-py-에서-직접-실행했을-때" class="headerlink" title="# thailand.py 에서 직접 실행했을 때"></a># thailand.py 에서 직접 실행했을 때</h6><h6 id="Thailand-모듈을-직접-실행"><a href="#Thailand-모듈을-직접-실행" class="headerlink" title="Thailand 모듈을 직접 실행"></a>Thailand 모듈을 직접 실행</h6><h6 id="이-문장은-모듈을-직접-실행할-때만-실행돼요"><a href="#이-문장은-모듈을-직접-실행할-때만-실행돼요" class="headerlink" title="이 문장은 모듈을 직접 실행할 때만 실행돼요"></a>이 문장은 모듈을 직접 실행할 때만 실행돼요</h6><h6 id="태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-3"><a href="#태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-3" class="headerlink" title="[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"></a>[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원</h6><br>
+
+<h6 id="thailand-py-말고-외부에서-실행했을-때"><a href="#thailand-py-말고-외부에서-실행했을-때" class="headerlink" title="# thailand.py 말고 외부에서 실행했을 때"></a># thailand.py 말고 외부에서 실행했을 때</h6><h6 id="Thailand-외부에서-모듈-호출"><a href="#Thailand-외부에서-모듈-호출" class="headerlink" title="Thailand 외부에서 모듈 호출"></a>Thailand 외부에서 모듈 호출</h6><h6 id="태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-4"><a href="#태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-4" class="headerlink" title="[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"></a>[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원</h6></details>
+
+<p><br><br></p>
+<p><strong>5. 패키지, 모듈 위치</strong></p>
+<h5 id="▷-입력-4"><a href="#▷-입력-4" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 패키지, 모듈 위치</span>
+<span class="token keyword">from</span> travel <span class="token keyword">import</span> <span class="token operator">*</span>
+trip1 <span class="token operator">=</span> thailand<span class="token punctuation">.</span>ThailandPackage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+trip1<span class="token punctuation">.</span>detail<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> inspect
+<span class="token keyword">import</span> random
+<span class="token keyword">print</span><span class="token punctuation">(</span>inspect<span class="token punctuation">.</span>getfile<span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>inspect<span class="token punctuation">.</span>getfile<span class="token punctuation">(</span>thailand<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="Thailand-외부에서-모듈-호출-1"><a href="#Thailand-외부에서-모듈-호출-1" class="headerlink" title="Thailand 외부에서 모듈 호출"></a>Thailand 외부에서 모듈 호출</h6><h6 id="태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-5"><a href="#태국-패키지-3박-5일-방콕-파타야-여행-야시장-투어-50만원-5" class="headerlink" title="[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원"></a>[태국 패키지 3박 5일] 방콕, 파타야 여행 (야시장 투어) 50만원</h6><br>
+
+<h6 id="C-Users-young-Anaconda3-lib-random-py"><a href="#C-Users-young-Anaconda3-lib-random-py" class="headerlink" title="C:\Users\young\Anaconda3\lib\random.py"></a>C:\Users\young\Anaconda3\lib\random.py</h6><h6 id="c-Users-young-Desktop-young-study-python-travel-thailand-py"><a href="#c-Users-young-Desktop-young-study-python-travel-thailand-py" class="headerlink" title="c:\Users\young\Desktop\young\study\python\travel\thailand.py"></a>c:\Users\young\Desktop\young\study\python\travel\thailand.py</h6></details>
+
+<p><br><br></p>
+<p><strong>6. pip install</strong></p>
+<h5 id="▷-입력-5"><a href="#▷-입력-5" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># pypi.org -> Search projects -> 'beautifulsoup'</span>
+<span class="token comment" spellcheck="true"># Terminal -> pip install beautifulsoup4</span>
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span><span class="token string">"&lt;p>Some&lt;b>bad&lt;i>HTML"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>prettify<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="lt-html-gt"><a href="#lt-html-gt" class="headerlink" title="&lt;html&gt;"></a>&lt;html&gt;</h6><h6 id="nbsp-lt-body-gt"><a href="#nbsp-lt-body-gt" class="headerlink" title="&nbsp;&lt;body&gt;"></a>&nbsp;&lt;body&gt;</h6><h6 id="nbsp-nbsp-lt-p-gt"><a href="#nbsp-nbsp-lt-p-gt" class="headerlink" title="&nbsp;&nbsp;&lt;p&gt;"></a>&nbsp;&nbsp;&lt;p&gt;</h6><h6 id="nbsp-nbsp-nbsp-Some"><a href="#nbsp-nbsp-nbsp-Some" class="headerlink" title="&nbsp;&nbsp;&nbsp;Some"></a>&nbsp;&nbsp;&nbsp;Some</h6><h6 id="nbsp-nbsp-nbsp-lt-b-gt"><a href="#nbsp-nbsp-nbsp-lt-b-gt" class="headerlink" title="&nbsp;&nbsp;&nbsp;&lt;b&gt;"></a>&nbsp;&nbsp;&nbsp;&lt;b&gt;</h6><h6 id="nbsp-nbsp-nbsp-nbsp-bad"><a href="#nbsp-nbsp-nbsp-nbsp-bad" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;bad"></a>&nbsp;&nbsp;&nbsp;&nbsp;bad</h6><h6 id="nbsp-nbsp-nbsp-nbsp-lt-i-gt"><a href="#nbsp-nbsp-nbsp-nbsp-lt-i-gt" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&gt;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&gt;</h6><h6 id="nbsp-nbsp-nbsp-nbsp-nbsp-HTML"><a href="#nbsp-nbsp-nbsp-nbsp-nbsp-HTML" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML</h6><h6 id="nbsp-nbsp-nbsp-nbsp-lt-i-gt-1"><a href="#nbsp-nbsp-nbsp-nbsp-lt-i-gt-1" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;&lt;/i&gt;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/i&gt;</h6><h6 id="nbsp-nbsp-nbsp-lt-b-gt-1"><a href="#nbsp-nbsp-nbsp-lt-b-gt-1" class="headerlink" title="&nbsp;&nbsp;&nbsp;&lt;/b&gt;"></a>&nbsp;&nbsp;&nbsp;&lt;/b&gt;</h6><h6 id="nbsp-nbsp-lt-p-gt-1"><a href="#nbsp-nbsp-lt-p-gt-1" class="headerlink" title="&nbsp;&nbsp;&lt;/p&gt;"></a>&nbsp;&nbsp;&lt;/p&gt;</h6><h6 id="nbsp-lt-body-gt-1"><a href="#nbsp-lt-body-gt-1" class="headerlink" title="&nbsp;&lt;/body&gt;"></a>&nbsp;&lt;/body&gt;</h6><h6 id="lt-html-gt-1"><a href="#lt-html-gt-1" class="headerlink" title="&lt;/html&gt;"></a>&lt;/html&gt;</h6></details>
+
+<p><br><br></p>
+<p><strong>7. 내장함수</strong></p>
+<h5 id="▷-입력-6"><a href="#▷-입력-6" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 내장함수</span>
+<span class="token comment" spellcheck="true"># input : 사용자 입력을 받는 함수</span>
+language <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"무슨 언어를 좋아하세요? "</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{0}은 아주 좋은 언어입니다!"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>language<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># dir : 어떤 객체를 넘겨줬을 때 그 객체가 어떤 변수와 함수를 가지고 있는지 표시</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> random <span class="token comment" spellcheck="true"># 외장함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> pickle
+<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+name <span class="token operator">=</span> <span class="token string">"Jim"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="무슨-언어를-좋아하세요-파이썬"><a href="#무슨-언어를-좋아하세요-파이썬" class="headerlink" title="무슨 언어를 좋아하세요? 파이썬"></a>무슨 언어를 좋아하세요? 파이썬</h6><h6 id="파이썬은-아주-좋은-언어입니다"><a href="#파이썬은-아주-좋은-언어입니다" class="headerlink" title="파이썬은 아주 좋은 언어입니다!"></a>파이썬은 아주 좋은 언어입니다!</h6><br>
+
+<h6 id="‘-annotations-’-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘language’"><a href="#‘-annotations-’-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘language’" class="headerlink" title="[‘__annotations__’, __builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘language’]"></a>[‘__annotations__’, __builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘language’]</h6><h6 id="‘-annotations-’-‘-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘language’-‘random’"><a href="#‘-annotations-’-‘-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘language’-‘random’" class="headerlink" title="[‘__annotations__’, ‘__builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘language’, ‘random’]"></a>[‘__annotations__’, ‘__builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘language’, ‘random’]</h6><h6 id="‘-annotations-’-‘-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘language’-‘pickle’-‘random’"><a href="#‘-annotations-’-‘-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘language’-‘pickle’-‘random’" class="headerlink" title="[‘__annotations__’, ‘__builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘language’, ‘pickle’, ‘random’]"></a>[‘__annotations__’, ‘__builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘language’, ‘pickle’, ‘random’]</h6><br>
+
+<h6 id="‘BPF’-‘LOG4’-‘NV-MAGICCONST’-‘RECIP-BPF’-‘Random’-‘SG-MAGICCONST’-‘SystemRandom’-‘TWOPI’-‘-BuiltinMethodType’-‘-MethodType’-‘-Sequence’-‘-Set’-‘-all-’-‘-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘-acos’-‘-bisect’-‘-ceil’-‘-cos’-‘-e’-‘-exp’-‘-inst’-‘-itertools’-‘-log’-‘-os’-‘-pi’-‘-random’-‘-sha512’-‘-sin’-‘-sqrt’-‘-test’-‘-test-generator’-‘-urandom’-‘-warn’-‘betavariate’-‘choice’-‘choices’-‘expovariate’-‘gammavariate’-‘gauss’-‘getrandbits’-‘getstate’-‘lognormvariate’-‘normalvariate’-‘paretovariate’-‘randint’-‘random’-‘randrange’-‘sample’-‘seed’-‘setstate’-‘shuffle’-‘triangular’-‘uniform’-‘vonmisesvariate’-‘weibullvariate’"><a href="#‘BPF’-‘LOG4’-‘NV-MAGICCONST’-‘RECIP-BPF’-‘Random’-‘SG-MAGICCONST’-‘SystemRandom’-‘TWOPI’-‘-BuiltinMethodType’-‘-MethodType’-‘-Sequence’-‘-Set’-‘-all-’-‘-builtins-’-‘-cached-’-‘-doc-’-‘-file-’-‘-loader-’-‘-name-’-‘-package-’-‘-spec-’-‘-acos’-‘-bisect’-‘-ceil’-‘-cos’-‘-e’-‘-exp’-‘-inst’-‘-itertools’-‘-log’-‘-os’-‘-pi’-‘-random’-‘-sha512’-‘-sin’-‘-sqrt’-‘-test’-‘-test-generator’-‘-urandom’-‘-warn’-‘betavariate’-‘choice’-‘choices’-‘expovariate’-‘gammavariate’-‘gauss’-‘getrandbits’-‘getstate’-‘lognormvariate’-‘normalvariate’-‘paretovariate’-‘randint’-‘random’-‘randrange’-‘sample’-‘seed’-‘setstate’-‘shuffle’-‘triangular’-‘uniform’-‘vonmisesvariate’-‘weibullvariate’" class="headerlink" title="[‘BPF’, ‘LOG4’, ‘NV_MAGICCONST’, ‘RECIP_BPF’, ‘Random’, ‘SG_MAGICCONST’, ‘SystemRandom’, ‘TWOPI’, ‘_BuiltinMethodType’, ‘_MethodType’, ‘_Sequence’, ‘_Set’, ‘__all__’, ‘__builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘_acos’, ‘_bisect’, ‘_ceil’, ‘_cos’, ‘_e’, ‘_exp’, ‘_inst’, ‘_itertools’, ‘_log’, ‘_os’, ‘_pi’, ‘_random’, ‘_sha512’, ‘_sin’, ‘_sqrt’, ‘_test’, ‘_test_generator’, ‘_urandom’, ‘_warn’, ‘betavariate’, ‘choice’, ‘choices’, ‘expovariate’, ‘gammavariate’, ‘gauss’, ‘getrandbits’, ‘getstate’, ‘lognormvariate’, ‘normalvariate’, ‘paretovariate’, ‘randint’, ‘random’, ‘randrange’, ‘sample’, ‘seed’, ‘setstate’, ‘shuffle’, ‘triangular’, ‘uniform’, ‘vonmisesvariate’, ‘weibullvariate’]"></a>[‘BPF’, ‘LOG4’, ‘NV_MAGICCONST’, ‘RECIP_BPF’, ‘Random’, ‘SG_MAGICCONST’, ‘SystemRandom’, ‘TWOPI’, ‘_BuiltinMethodType’, ‘_MethodType’, ‘_Sequence’, ‘_Set’, ‘__all__’, ‘__builtins__’, ‘__cached__’, ‘__doc__’, ‘__file__’, ‘__loader__’, ‘__name__’, ‘__package__’, ‘__spec__’, ‘_acos’, ‘_bisect’, ‘_ceil’, ‘_cos’, ‘_e’, ‘_exp’, ‘_inst’, ‘_itertools’, ‘_log’, ‘_os’, ‘_pi’, ‘_random’, ‘_sha512’, ‘_sin’, ‘_sqrt’, ‘_test’, ‘_test_generator’, ‘_urandom’, ‘_warn’, ‘betavariate’, ‘choice’, ‘choices’, ‘expovariate’, ‘gammavariate’, ‘gauss’, ‘getrandbits’, ‘getstate’, ‘lognormvariate’, ‘normalvariate’, ‘paretovariate’, ‘randint’, ‘random’, ‘randrange’, ‘sample’, ‘seed’, ‘setstate’, ‘shuffle’, ‘triangular’, ‘uniform’, ‘vonmisesvariate’, ‘weibullvariate’]</h6><br>
+
+<h6 id="‘-add-’-‘-class-’-‘-contains-’-‘-delattr-’-‘-delitem-’-‘-dir-’-‘-doc-’-‘-eq-’-‘-format-’-‘-ge-’-‘-getattribute-’-‘-getitem-’-‘-gt-’-‘-hash-’-‘-iadd-’-‘-imul-’-‘-init-’-‘-init-subclass-’-‘-iter-’-‘-le-’-‘-len-’-‘-lt-’-‘-mul-’-‘-ne-’-‘-new-’-‘-reduce-’-‘-reduce-ex-’-‘-repr-’-‘-reversed-’-‘-rmul-’-‘-setattr-’-‘-setitem-’-‘-sizeof-’-‘-str-’-‘-subclasshook-’-‘append’-‘clear’-‘copy’-‘count’-‘extend’-‘index’-‘insert’-‘pop’-‘remove’-‘reverse’-‘sort’"><a href="#‘-add-’-‘-class-’-‘-contains-’-‘-delattr-’-‘-delitem-’-‘-dir-’-‘-doc-’-‘-eq-’-‘-format-’-‘-ge-’-‘-getattribute-’-‘-getitem-’-‘-gt-’-‘-hash-’-‘-iadd-’-‘-imul-’-‘-init-’-‘-init-subclass-’-‘-iter-’-‘-le-’-‘-len-’-‘-lt-’-‘-mul-’-‘-ne-’-‘-new-’-‘-reduce-’-‘-reduce-ex-’-‘-repr-’-‘-reversed-’-‘-rmul-’-‘-setattr-’-‘-setitem-’-‘-sizeof-’-‘-str-’-‘-subclasshook-’-‘append’-‘clear’-‘copy’-‘count’-‘extend’-‘index’-‘insert’-‘pop’-‘remove’-‘reverse’-‘sort’" class="headerlink" title="[‘__add__’, ‘__class__’, ‘__contains__’, ‘__delattr__’, ‘__delitem__’, ‘__dir__’, ‘__doc__’, ‘__eq__’, ‘__format__’, ‘__ge__’, ‘__getattribute__’, ‘__getitem__’, ‘__gt__’, ‘__hash__’, ‘__iadd__’, ‘__imul__’, ‘__init__’, ‘__init_subclass__’, ‘__iter__’, ‘__le__’, ‘__len__’, ‘__lt__’, ‘__mul__’, ‘__ne__’, ‘__new__’, ‘__reduce__’, ‘__reduce_ex__’, ‘__repr__’, ‘__reversed__’, ‘__rmul__’, ‘__setattr__’, ‘__setitem__’, ‘__sizeof__’, ‘__str__’, ‘__subclasshook__’, ‘append’, ‘clear’, ‘copy’, ‘count’, ‘extend’, ‘index’, ‘insert’, ‘pop’, ‘remove’, ‘reverse’, ‘sort’]"></a>[‘__add__’, ‘__class__’, ‘__contains__’, ‘__delattr__’, ‘__delitem__’, ‘__dir__’, ‘__doc__’, ‘__eq__’, ‘__format__’, ‘__ge__’, ‘__getattribute__’, ‘__getitem__’, ‘__gt__’, ‘__hash__’, ‘__iadd__’, ‘__imul__’, ‘__init__’, ‘__init_subclass__’, ‘__iter__’, ‘__le__’, ‘__len__’, ‘__lt__’, ‘__mul__’, ‘__ne__’, ‘__new__’, ‘__reduce__’, ‘__reduce_ex__’, ‘__repr__’, ‘__reversed__’, ‘__rmul__’, ‘__setattr__’, ‘__setitem__’, ‘__sizeof__’, ‘__str__’, ‘__subclasshook__’, ‘append’, ‘clear’, ‘copy’, ‘count’, ‘extend’, ‘index’, ‘insert’, ‘pop’, ‘remove’, ‘reverse’, ‘sort’]</h6><br>
+
+<h6 id="‘-add-’-‘-class-’-‘-contains-’-‘-delattr-’-‘-dir-’-‘-doc-’-‘-eq-’-‘-format-’-‘-ge-’-‘-getattribute-’-‘-getitem-’-‘-getnewargs-’-‘-gt-’-‘-hash-’-‘-init-’-‘-init-subclass-’-‘-iter-’-‘-le-’-‘-len-’-‘-lt-’-‘-mod-’-‘-mul-’-‘-ne-’-‘-new-’-‘-reduce-’-‘-reduce-ex-’-‘-repr-’-‘-rmod-’-‘-rmul-’-‘-setattr-’-‘-sizeof-’-‘-str-’-‘-subclasshook-’-‘capitalize’-‘casefold’-‘center’-‘count’-‘encode’-‘endswith’-‘expandtabs’-‘find’-‘format’-‘format-map’-‘index’-‘isalnum’-‘isalpha’-‘isascii’-‘isdecimal’-‘isdigit’-‘isidentifier’-‘islower’-‘isnumeric’-‘isprintable’-‘isspace’-‘istitle’-‘isupper’-‘join’-‘ljust’-‘lower’-‘lstrip’-‘maketrans’-‘partition’-‘replace’-‘rfind’-‘rindex’-‘rjust’-‘rpartition’-‘rsplit’-‘rstrip’-‘split’-‘splitlines’-‘startswith’-‘strip’-‘swapcase’-‘title’-‘translate’-‘upper’-‘zfill’"><a href="#‘-add-’-‘-class-’-‘-contains-’-‘-delattr-’-‘-dir-’-‘-doc-’-‘-eq-’-‘-format-’-‘-ge-’-‘-getattribute-’-‘-getitem-’-‘-getnewargs-’-‘-gt-’-‘-hash-’-‘-init-’-‘-init-subclass-’-‘-iter-’-‘-le-’-‘-len-’-‘-lt-’-‘-mod-’-‘-mul-’-‘-ne-’-‘-new-’-‘-reduce-’-‘-reduce-ex-’-‘-repr-’-‘-rmod-’-‘-rmul-’-‘-setattr-’-‘-sizeof-’-‘-str-’-‘-subclasshook-’-‘capitalize’-‘casefold’-‘center’-‘count’-‘encode’-‘endswith’-‘expandtabs’-‘find’-‘format’-‘format-map’-‘index’-‘isalnum’-‘isalpha’-‘isascii’-‘isdecimal’-‘isdigit’-‘isidentifier’-‘islower’-‘isnumeric’-‘isprintable’-‘isspace’-‘istitle’-‘isupper’-‘join’-‘ljust’-‘lower’-‘lstrip’-‘maketrans’-‘partition’-‘replace’-‘rfind’-‘rindex’-‘rjust’-‘rpartition’-‘rsplit’-‘rstrip’-‘split’-‘splitlines’-‘startswith’-‘strip’-‘swapcase’-‘title’-‘translate’-‘upper’-‘zfill’" class="headerlink" title="[‘__add__’, ‘__class__’, ‘__contains__’, ‘__delattr__’, ‘__dir__’, ‘__doc__’, ‘__eq__’, ‘__format__’, ‘__ge__’, ‘__getattribute__’, ‘__getitem__’, ‘__getnewargs__’, ‘__gt__’, ‘__hash__’, ‘__init__’, ‘__init_subclass__’, ‘__iter__’, ‘__le__’, ‘__len__’, ‘__lt__’, ‘__mod__’, ‘__mul__’, ‘__ne__’, ‘__new__’, ‘__reduce__’, ‘__reduce_ex__’, ‘__repr__’, ‘__rmod__’, ‘__rmul__’, ‘__setattr__’, ‘__sizeof__’, ‘__str__’, ‘__subclasshook__’, ‘capitalize’, ‘casefold’, ‘center’, ‘count’, ‘encode’, ‘endswith’, ‘expandtabs’, ‘find’, ‘format’, ‘format_map’, ‘index’, ‘isalnum’, ‘isalpha’, ‘isascii’, ‘isdecimal’, ‘isdigit’, ‘isidentifier’, ‘islower’, ‘isnumeric’, ‘isprintable’, ‘isspace’, ‘istitle’, ‘isupper’, ‘join’, ‘ljust’, ‘lower’, ‘lstrip’, ‘maketrans’, ‘partition’, ‘replace’, ‘rfind’, ‘rindex’, ‘rjust’, ‘rpartition’, ‘rsplit’, ‘rstrip’, ‘split’, ‘splitlines’, ‘startswith’, ‘strip’, ‘swapcase’, ‘title’, ‘translate’, ‘upper’, ‘zfill’]"></a>[‘__add__’, ‘__class__’, ‘__contains__’, ‘__delattr__’, ‘__dir__’, ‘__doc__’, ‘__eq__’, ‘__format__’, ‘__ge__’, ‘__getattribute__’, ‘__getitem__’, ‘__getnewargs__’, ‘__gt__’, ‘__hash__’, ‘__init__’, ‘__init_subclass__’, ‘__iter__’, ‘__le__’, ‘__len__’, ‘__lt__’, ‘__mod__’, ‘__mul__’, ‘__ne__’, ‘__new__’, ‘__reduce__’, ‘__reduce_ex__’, ‘__repr__’, ‘__rmod__’, ‘__rmul__’, ‘__setattr__’, ‘__sizeof__’, ‘__str__’, ‘__subclasshook__’, ‘capitalize’, ‘casefold’, ‘center’, ‘count’, ‘encode’, ‘endswith’, ‘expandtabs’, ‘find’, ‘format’, ‘format_map’, ‘index’, ‘isalnum’, ‘isalpha’, ‘isascii’, ‘isdecimal’, ‘isdigit’, ‘isidentifier’, ‘islower’, ‘isnumeric’, ‘isprintable’, ‘isspace’, ‘istitle’, ‘isupper’, ‘join’, ‘ljust’, ‘lower’, ‘lstrip’, ‘maketrans’, ‘partition’, ‘replace’, ‘rfind’, ‘rindex’, ‘rjust’, ‘rpartition’, ‘rsplit’, ‘rstrip’, ‘split’, ‘splitlines’, ‘startswith’, ‘strip’, ‘swapcase’, ‘title’, ‘translate’, ‘upper’, ‘zfill’]</h6></details>
+
+<p><br><br></p>
+<p><strong>8. 외장함수</strong></p>
+<h5 id="▷-입력-7"><a href="#▷-입력-7" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 외장함수</span>
+<span class="token comment" spellcheck="true"># glob : 경로 내의 폴더 / 파일 목록 조회 (윈도우 dir)</span>
+<span class="token keyword">import</span> glob
+<span class="token keyword">print</span><span class="token punctuation">(</span>glob<span class="token punctuation">.</span>glob<span class="token punctuation">(</span><span class="token string">"*.py"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 확장자가 py 인 모든 파일</span>
+
+<span class="token comment" spellcheck="true"># os : 운영체제에서 제공하는 기본 기능</span>
+<span class="token keyword">import</span> os
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 현재 디렉토리</span>
+
+folder <span class="token operator">=</span> <span class="token string">"sample_dir"</span>
+
+<span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>folder<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"이미 존재하는 폴더입니다."</span><span class="token punctuation">)</span>
+    os<span class="token punctuation">.</span>rmdir<span class="token punctuation">(</span>folder<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>folder<span class="token punctuation">,</span> <span class="token string">"폴더를 삭제하였습니다."</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>folder<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 폴더 생성</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>folder<span class="token punctuation">,</span> <span class="token string">"폴더를 생성하였습니다."</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># time : 시간 관련 함수</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> datetime
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"오늘 날짜는"</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># timedalta : 두 날짜 사이의 간격</span>
+today <span class="token operator">=</span> datetime<span class="token punctuation">.</span>date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 오늘 날짜 저장</span>
+td <span class="token operator">=</span> datetime<span class="token punctuation">.</span>timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 100일 저장</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"우리가 만난지 100일은"</span><span class="token punctuation">,</span> today <span class="token operator">+</span> td<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="‘byme-py’-‘practice10-py’-‘theater-module-py’"><a href="#‘byme-py’-‘practice10-py’-‘theater-module-py’" class="headerlink" title="[‘byme.py’, ‘practice10.py’, ‘theater_module.py’]"></a>[‘byme.py’, ‘practice10.py’, ‘theater_module.py’]</h6><br>
+
+<h6 id="c-Users-young-Desktop-young-study-python"><a href="#c-Users-young-Desktop-young-study-python" class="headerlink" title="c:\Users\young\Desktop\young\study\python"></a>c:\Users\young\Desktop\young\study\python</h6><h6 id="sample-dir-폴더를-생성하였습니다"><a href="#sample-dir-폴더를-생성하였습니다" class="headerlink" title="sample_dir 폴더를 생성하였습니다."></a>sample_dir 폴더를 생성하였습니다.</h6><br>
+
+<h6 id="‘byme-py’-‘practice10-py’-‘sample-dir’-‘theater-module-py’-‘travel’-‘-pycache-’"><a href="#‘byme-py’-‘practice10-py’-‘sample-dir’-‘theater-module-py’-‘travel’-‘-pycache-’" class="headerlink" title="[‘byme.py’,  ‘practice10.py’, ‘sample_dir’, ‘theater_module.py’, ‘travel’, ‘__pycache__’]"></a>[‘byme.py’,  ‘practice10.py’, ‘sample_dir’, ‘theater_module.py’, ‘travel’, ‘__pycache__’]</h6><br>
+
+<h6 id="time-struct-time-tm-year-2020-tm-mon-4-tm-mday-21-tm-hour-20-tm-min-17-tm-sec-41-tm-wday-1-tm-yday-112-tm-isdst-0"><a href="#time-struct-time-tm-year-2020-tm-mon-4-tm-mday-21-tm-hour-20-tm-min-17-tm-sec-41-tm-wday-1-tm-yday-112-tm-isdst-0" class="headerlink" title="time.struct_time(tm_year=2020, tm_mon=4, tm_mday=21, tm_hour=20, tm_min=17, tm_sec=41, tm_wday=1, tm_yday=112, tm_isdst=0)"></a>time.struct_time(tm_year=2020, tm_mon=4, tm_mday=21, tm_hour=20, tm_min=17, tm_sec=41, tm_wday=1, tm_yday=112, tm_isdst=0)</h6><h6 id="2020-04-21-20-17-41"><a href="#2020-04-21-20-17-41" class="headerlink" title="2020-04-21 20:17:41"></a>2020-04-21 20:17:41</h6><br>
+
+<h6 id="오늘-날짜는-2020-04-21"><a href="#오늘-날짜는-2020-04-21" class="headerlink" title="오늘 날짜는 2020-04-21"></a>오늘 날짜는 2020-04-21</h6><br>
+
+<h6 id="우리가-만난지-100일은-2020-07-30"><a href="#우리가-만난지-100일은-2020-07-30" class="headerlink" title="우리가 만난지 100일은 2020-07-30"></a>우리가 만난지 100일은 2020-07-30</h6></details>
+
+<p><br><br></p>
+<p><strong>9. Quiz</strong></p>
+<h5 id="▷-입력-8"><a href="#▷-입력-8" class="headerlink" title="▷ 입력"></a>▷ 입력</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Quiz 10.</span>
+<span class="token comment" spellcheck="true"># 프로젝트 내에 나만의 시그니처를 남기는 모듈을 만드시오.</span>
+
+<span class="token comment" spellcheck="true"># 조건 : 모듈 파일명은 byme.py 로 작성</span>
+
+<span class="token comment" spellcheck="true"># (모듈 사용 예제)</span>
+<span class="token comment" spellcheck="true"># import byme</span>
+<span class="token comment" spellcheck="true"># byme.sign()</span>
+
+<span class="token comment" spellcheck="true"># (출력 예제)</span>
+<span class="token comment" spellcheck="true"># 이 프로그램은 나도코딩에 의해 만들어졌습니다.</span>
+<span class="token comment" spellcheck="true"># 유튜브 : http://youtube.com</span>
+<span class="token comment" spellcheck="true"># 이메일 : nadocoding@gmail.com</span>
+
+<span class="token keyword">import</span> byme
+byme<span class="token punctuation">.</span>sign<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># byme.py</span>
+<span class="token keyword">def</span> <span class="token function">sign</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"이 게시물은 luvbud에 의해 만들어졌습니다."</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"웹주소 : https://luvbud.github.io"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"이메일 : 1234@1234"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 16px;">출력</summary>
+
+<h6 id="이-게시물은-luvbud에-의해-만들어졌습니다"><a href="#이-게시물은-luvbud에-의해-만들어졌습니다" class="headerlink" title="이 게시물은 luvbud에 의해 만들어졌습니다."></a>이 게시물은 luvbud에 의해 만들어졌습니다.</h6><h6 id="웹주소-https-luvbud-github-io"><a href="#웹주소-https-luvbud-github-io" class="headerlink" title="웹주소 : https://luvbud.github.io"></a>웹주소 : <a href="https://luvbud.github.io">https://luvbud.github.io</a></h6><h6 id="이메일-1234-1234"><a href="#이메일-1234-1234" class="headerlink" title="이메일 : 1234@1234"></a>이메일 : 1234@1234</h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-009/" title="파이썬 6시간 공부해보자 (9) - 예외처리">Next: 파이썬 6시간 공부해보자 (9) - 예외처리&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

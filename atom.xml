@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-21T06:22:40.060Z</updated>
+  <updated>2020-04-21T12:39:41.118Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>파이썬 6시간 공부해보자 (10) - 모듈과 패키지</title>
+    <link href="http://luvbud.github.io/python-010/"/>
+    <id>http://luvbud.github.io/python-010/</id>
+    <published>2020-04-21T06:25:08.000Z</published>
+    <updated>2020-04-21T12:39:41.118Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+
+&lt;h4 id=&quot;섹션-10-모듈과-패키지&quot;&gt;&lt;a href=&quot;#섹션-10-모듈과-패키지&quot; class=&quot;headerlink&quot; title=&quot;섹션 10. 모듈과 패키지&quot;&gt;&lt;/a&gt;&lt;strong&gt;섹션 10. 모듈과
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
+    
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>파이썬 6시간 공부해보자 (9) - 예외처리</title>
     <link href="http://luvbud.github.io/python-009/"/>
     <id>http://luvbud.github.io/python-009/</id>
     <published>2020-04-20T10:18:04.000Z</published>
-    <updated>2020-04-21T06:22:40.060Z</updated>
+    <updated>2020-04-21T06:26:55.305Z</updated>
     
     <summary type="html">
     
@@ -81,7 +110,7 @@
     <link href="http://luvbud.github.io/python-008/"/>
     <id>http://luvbud.github.io/python-008/</id>
     <published>2020-04-19T14:04:31.000Z</published>
-    <updated>2020-04-20T10:10:43.002Z</updated>
+    <updated>2020-04-21T12:40:02.621Z</updated>
     
     <summary type="html">
     
@@ -327,7 +356,7 @@
     <link href="http://luvbud.github.io/python-000/"/>
     <id>http://luvbud.github.io/python-000/</id>
     <published>2020-04-10T13:22:25.000Z</published>
-    <updated>2020-04-20T10:51:52.075Z</updated>
+    <updated>2020-04-21T06:26:28.765Z</updated>
     
     <summary type="html">
     
