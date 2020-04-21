@@ -122,8 +122,48 @@ try:
 <span class="token comment" spellcheck="true">#         치킨 소진 시 사용자 정의 에러[SoldOutError]를 발생시키고 프로그램 종료</span>
 <span class="token comment" spellcheck="true">#         출력 메시지 : "재고가 소진되어 더 이상 주문을 받지 않습니다."</span>
 
-<span class="token comment" spellcheck="true"># [코드]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># [코드]</span>
+<span class="token comment" spellcheck="true"># chicken = 10</span>
+<span class="token comment" spellcheck="true"># waiting = 1 # 홀 안에는 현재 만석. 대기번호 1부터 시작</span>
+<span class="token comment" spellcheck="true"># while(True):</span>
+<span class="token comment" spellcheck="true">#     print("[남은 치킨 : {0}]".format(chicken))</span>
+<span class="token comment" spellcheck="true">#     order = int(input("치킨 몇 마리 주문하시겠습니까?"))</span>
+<span class="token comment" spellcheck="true">#     if order > chicken: # 남은 치킨보다 주문량이 많을 때</span>
+<span class="token comment" spellcheck="true">#         print("재료가 부족합니다.")</span>
+<span class="token comment" spellcheck="true">#     else:</span>
+<span class="token comment" spellcheck="true">#         print("[대기번호 {0}] {1}마리 주문이 완료되었습니다." \</span>
+<span class="token comment" spellcheck="true">#             .format(waiting, order))</span>
+<span class="token comment" spellcheck="true">#         waiting += 1</span>
+<span class="token comment" spellcheck="true">#         chicken -= order</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SoldOutError</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+chicken <span class="token operator">=</span> <span class="token number">10</span>
+waiting <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true"># 홀 안에는 현재 만석. 대기번호 1부터 시작</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[남은 치킨 : {0}]"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>chicken<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        order <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"치킨 몇 마리 주문하시겠습니까?"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> order <span class="token operator">></span> chicken<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 남은 치킨보다 주문량이 많을 때</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"재료가 부족합니다."</span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> order <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"[대기번호 {0}] {1}마리 주문이 완료되었습니다."</span> \
+                <span class="token punctuation">.</span>format<span class="token punctuation">(</span>waiting<span class="token punctuation">,</span> order<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            waiting <span class="token operator">+=</span> <span class="token number">1</span>
+            chicken <span class="token operator">-=</span> order
+
+        <span class="token keyword">if</span> chicken <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> SoldOutError
+
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"잘못된 값을 입력하였습니다."</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> SoldOutError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"재고가 소진되어 더 이상 주문을 받지 않습니다."</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <details>
 <summary style="font-size: 16px;">출력</summary>
 
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-008-1/" title="파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트">Next: 파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<h6 id="남은-치킨-10"><a href="#남은-치킨-10" class="headerlink" title="[남은 치킨 : 10]"></a>[남은 치킨 : 10]</h6><h6 id="치킨-몇-마리-주문하시겠습니까-5"><a href="#치킨-몇-마리-주문하시겠습니까-5" class="headerlink" title="치킨 몇 마리 주문하시겠습니까? 5"></a>치킨 몇 마리 주문하시겠습니까? 5</h6><h6 id="대기번호-1-5마리-주문이-완료되었습니다"><a href="#대기번호-1-5마리-주문이-완료되었습니다" class="headerlink" title="[대기번호 1] 5마리 주문이 완료되었습니다."></a>[대기번호 1] 5마리 주문이 완료되었습니다.</h6><h6 id="남은-치킨-5"><a href="#남은-치킨-5" class="headerlink" title="[남은 치킨 : 5]"></a>[남은 치킨 : 5]</h6><h6 id="치킨-몇-마리-주문하시겠습니까-1"><a href="#치킨-몇-마리-주문하시겠습니까-1" class="headerlink" title="치킨 몇 마리 주문하시겠습니까? -1"></a>치킨 몇 마리 주문하시겠습니까? -1</h6><h6 id="잘못된-값을-입력하였습니다"><a href="#잘못된-값을-입력하였습니다" class="headerlink" title="잘못된 값을 입력하였습니다."></a>잘못된 값을 입력하였습니다.</h6><h6 id="남은-치킨-5-1"><a href="#남은-치킨-5-1" class="headerlink" title="[남은 치킨 : 5]"></a>[남은 치킨 : 5]</h6><h6 id="치킨-몇-마리-주문하시겠습니까-3"><a href="#치킨-몇-마리-주문하시겠습니까-3" class="headerlink" title="치킨 몇 마리 주문하시겠습니까? 3"></a>치킨 몇 마리 주문하시겠습니까? 3</h6><h6 id="대기번호-2-3마리-주문이-완료되었습니다"><a href="#대기번호-2-3마리-주문이-완료되었습니다" class="headerlink" title="[대기번호 2] 3마리 주문이 완료되었습니다."></a>[대기번호 2] 3마리 주문이 완료되었습니다.</h6><h6 id="남은-치킨-2"><a href="#남은-치킨-2" class="headerlink" title="[남은 치킨 : 2]"></a>[남은 치킨 : 2]</h6><h6 id="치킨-몇-마리-주문하시겠습니까-10"><a href="#치킨-몇-마리-주문하시겠습니까-10" class="headerlink" title="치킨 몇 마리 주문하시겠습니까? 10"></a>치킨 몇 마리 주문하시겠습니까? 10</h6><h6 id="재료가-부족합니다"><a href="#재료가-부족합니다" class="headerlink" title="재료가 부족합니다."></a>재료가 부족합니다.</h6><h6 id="남은-치킨-2-1"><a href="#남은-치킨-2-1" class="headerlink" title="[남은 치킨 : 2]"></a>[남은 치킨 : 2]</h6><h6 id="치킨-몇-마리-주문하시겠습니까-2"><a href="#치킨-몇-마리-주문하시겠습니까-2" class="headerlink" title="치킨 몇 마리 주문하시겠습니까? 2"></a>치킨 몇 마리 주문하시겠습니까? 2</h6><h6 id="대기번호-3-2마리-주문이-완료되었습니다"><a href="#대기번호-3-2마리-주문이-완료되었습니다" class="headerlink" title="[대기번호 3] 2마리 주문이 완료되었습니다."></a>[대기번호 3] 2마리 주문이 완료되었습니다.</h6><h6 id="재고가-소진되어-더-이상-주문을-받지-않습니다"><a href="#재고가-소진되어-더-이상-주문을-받지-않습니다" class="headerlink" title="재고가 소진되어 더 이상 주문을 받지 않습니다."></a>재고가 소진되어 더 이상 주문을 받지 않습니다.</h6></details></p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/python-008-1/" title="파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트">Next: 파이썬 6시간 공부해보자 (8) - 클래스 : 스타크래프트 프로젝트&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
