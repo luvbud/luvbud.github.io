@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-22T14:58:30.113Z</updated>
+  <updated>2020-04-22T15:03:33.871Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://luvbud.github.io/etc-002/"/>
     <id>http://luvbud.github.io/etc-002/</id>
     <published>2020-04-22T14:38:01.000Z</published>
-    <updated>2020-04-22T14:58:30.113Z</updated>
+    <updated>2020-04-22T15:03:33.871Z</updated>
     
     <summary type="html">
     
@@ -40,7 +40,7 @@
     
       <category term="etc" scheme="http://luvbud.github.io/tags/etc/"/>
     
-      <category term="cafe" scheme="http://luvbud.github.io/tags/cafe/"/>
+      <category term="daily" scheme="http://luvbud.github.io/tags/daily/"/>
     
   </entry>
   
