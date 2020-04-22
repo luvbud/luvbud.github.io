@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-21T12:39:41.118Z</updated>
+  <updated>2020-04-22T14:55:03.731Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>일상 첫 번째 .</title>
+    <link href="http://luvbud.github.io/etc-002/"/>
+    <id>http://luvbud.github.io/etc-002/</id>
+    <published>2020-04-22T14:38:01.000Z</published>
+    <updated>2020-04-22T14:55:03.731Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/img/daily.jpg&quot; alt=&quot;bud&quot;&gt;&lt;/p&gt;
+&lt;h6 id=&quot;오랜만에-예쁜-카페가니-힐링되는-기분이었다&quot;&gt;&lt;a href=&quot;#오랜만에-예쁜-카페가니-힐링되는-기분이었다&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="etc" scheme="http://luvbud.github.io/tags/etc/"/>
+    
+      <category term="cafe" scheme="http://luvbud.github.io/tags/cafe/"/>
+    
+  </entry>
   
   <entry>
     <title>파이썬 6시간 공부해보자 (10) - 모듈과 패키지</title>
