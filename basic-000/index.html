@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="luvbud"><title>기초 100제 · luvbud notebook</title><meta name="description" content="인프런 파이썬 기초 강의를 다 듣고 기초 100문제를 풀어보았다.&amp;#39;CodeUp 문제집 : 기초 100제 &amp;#39; 를 이틀에 걸쳐 다 풀었다!풀면서 적어놓고 싶은 부분만 글로 작성하였다.
+
+[8진수, 16진수]
+n = int(input(), 8) # 8진수 입력"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/rose.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">notebook</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">공책</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">home</a></li><li><a href="/archives">archive</a></li><li><a href="/tags">tags</a></li><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>기초 100제</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-04-23</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/study/" title="study" class="a-tag">study</a><span>&nbsp;</span><a href="/tags/algorithm/" title="algorithm" class="a-tag">algorithm</a><span>&nbsp;</span></span></p><p class="post-abstract"><br>
+
+<h5 id="인프런-파이썬-기초-강의를-다-듣고-기초-100문제를-풀어보았다"><a href="#인프런-파이썬-기초-강의를-다-듣고-기초-100문제를-풀어보았다" class="headerlink" title="인프런 파이썬 기초 강의를 다 듣고 기초 100문제를 풀어보았다."></a>인프런 파이썬 기초 강의를 다 듣고 기초 100문제를 풀어보았다.</h5><h5 id="39-CodeUp-문제집-기초-100제-39-를-이틀에-걸쳐-다-풀었다"><a href="#39-CodeUp-문제집-기초-100제-39-를-이틀에-걸쳐-다-풀었다" class="headerlink" title="&#39;CodeUp 문제집 : 기초 100제 &#39; 를 이틀에 걸쳐 다 풀었다!"></a>&#39;<a href="https://codeup.kr/problemsetsol.php?psid=23" target="_blank" rel="noopener"><strong><i>CodeUp 문제집 : 기초 100제</i></strong></a> &#39; 를 이틀에 걸쳐 다 풀었다!</h5><h5 id="풀면서-적어놓고-싶은-부분만-글로-작성하였다"><a href="#풀면서-적어놓고-싶은-부분만-글로-작성하였다" class="headerlink" title="풀면서 적어놓고 싶은 부분만 글로 작성하였다."></a>풀면서 적어놓고 싶은 부분만 글로 작성하였다.</h5><br>
+
+<p><strong>[8진수, 16진수]</strong></p>
+<pre class="line-numbers language-python"><code class="language-python">n <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 8진수 입력받아</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%d"</span> <span class="token operator">%</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 10진수로 출력</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 14px;">출력</summary>
+
+<h6 id="13"><a href="#13" class="headerlink" title="13"></a>13</h6><h6 id="11"><a href="#11" class="headerlink" title="11"></a>11</h6></details>
+
+<br>
+
+<pre class="line-numbers language-python"><code class="language-python">n <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 16진수 입력받아</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%o"</span> <span class="token operator">%</span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 8진수로 출력</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 14px;">출력</summary>
+
+<h6 id="f"><a href="#f" class="headerlink" title="f"></a>f</h6><h6 id="17"><a href="#17" class="headerlink" title="17"></a>17</h6></details>
+
+<br>
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1082. 16진수 구구단</span>
+n <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%X*%X=%X"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>n<span class="token punctuation">,</span> i<span class="token punctuation">,</span> n<span class="token operator">*</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># %X : 16진수</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 14px;">출력</summary>
+
+<h6 id="B"><a href="#B" class="headerlink" title="B"></a>B</h6><h6 id="B-1-B"><a href="#B-1-B" class="headerlink" title="B*1=B"></a>B*1=B</h6><h6 id="B-2-16"><a href="#B-2-16" class="headerlink" title="B*2=16"></a>B*2=16</h6><h6 id="B-3-21"><a href="#B-3-21" class="headerlink" title="B*3=21"></a>B*3=21</h6><h6 id="B-4-2C"><a href="#B-4-2C" class="headerlink" title="B*4=2C"></a>B*4=2C</h6><h6 id="B-5-37"><a href="#B-5-37" class="headerlink" title="B*5=37"></a>B*5=37</h6><h6 id="B-6-42"><a href="#B-6-42" class="headerlink" title="B*6=42"></a>B*6=42</h6><h6 id="B-7-4D"><a href="#B-7-4D" class="headerlink" title="B*7=4D"></a>B*7=4D</h6><h6 id="B-8-58"><a href="#B-8-58" class="headerlink" title="B*8=58"></a>B*8=58</h6><h6 id="B-9-63"><a href="#B-9-63" class="headerlink" title="B*9=63"></a>B*9=63</h6><h6 id="B-A-6E"><a href="#B-A-6E" class="headerlink" title="B*A=6E"></a>B*A=6E</h6><h6 id="B-B-79"><a href="#B-B-79" class="headerlink" title="B*B=79"></a>B*B=79</h6><h6 id="B-C-84"><a href="#B-C-84" class="headerlink" title="B*C=84"></a>B*C=84</h6><h6 id="B-D-8F"><a href="#B-D-8F" class="headerlink" title="B*D=8F"></a>B*D=8F</h6><h6 id="B-E-9A"><a href="#B-E-9A" class="headerlink" title="B*E=9A"></a>B*E=9A</h6><h6 id="B-F-A5"><a href="#B-F-A5" class="headerlink" title="B*F=A5"></a>B*F=A5</h6></details>
+
+<br>
+
+<p><strong>[ASCII]</strong></p>
+<pre class="line-numbers language-python"><code class="language-python">c <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 문자 입력받아</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ord<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 아스키코드 10진수 값으로 출력</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 14px;">출력</summary>
+
+<h6 id="a"><a href="#a" class="headerlink" title="a"></a>a</h6><h6 id="97"><a href="#97" class="headerlink" title="97"></a>97</h6></details>
+
+<br>
+
+<pre class="line-numbers language-python"><code class="language-python">n <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 10진수 입력받아</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>chr<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 아스키 문자로 출력</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<details>
+<summary style="font-size: 14px;">출력</summary>
+
+<h6 id="65"><a href="#65" class="headerlink" title="65"></a>65</h6><h6 id="A"><a href="#A" class="headerlink" title="A"></a>A</h6></details>
+
+<br>
+
+<p><strong>[2차원 배열 생성]</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 2차원 배열 입력받아 생성</span>
+num <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>int<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+mat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> col <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> row <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 19행 19열을 0으로 초기화하여 mat 생성</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</p></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/etc-002/" title="일상 첫 번째 .">Next: 일상 첫 번째 .&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://luvbud.github.io" rel="noopener noreferrer">luvbud</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
