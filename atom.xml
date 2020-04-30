@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-30T06:30:08.259Z</updated>
+  <updated>2020-04-30T06:41:14.736Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://luvbud.github.io/boj-2884/"/>
     <id>http://luvbud.github.io/boj-2884/</id>
     <published>2020-04-30T05:50:44.000Z</published>
-    <updated>2020-04-30T06:30:08.259Z</updated>
+    <updated>2020-04-30T06:41:14.736Z</updated>
     
     <summary type="html">
     
@@ -32,7 +32,7 @@
           &lt;br&gt;
 
 &lt;details&gt;
-&lt;summary style=&quot;font-size: 16px;&quot;&gt;문제보기&lt;/summary&gt;
+&lt;summary style=&quot;font-size: 16px; line-height: 1.5;&quot;&gt;문제보기&lt;/summary&gt;
 
 &lt;h4 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot;
         
