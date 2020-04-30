@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-23T12:06:47.897Z</updated>
+  <updated>2020-04-30T06:30:08.259Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>기초 100제</title>
+    <title>백준 2884번: 알람 시계</title>
+    <link href="http://luvbud.github.io/boj-2884/"/>
+    <id>http://luvbud.github.io/boj-2884/</id>
+    <published>2020-04-30T05:50:44.000Z</published>
+    <updated>2020-04-30T06:30:08.259Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+
+&lt;details&gt;
+&lt;summary style=&quot;font-size: 16px;&quot;&gt;문제보기&lt;/summary&gt;
+
+&lt;h4 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
+    
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
+    
+      <category term="boj" scheme="http://luvbud.github.io/tags/boj/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>코드업 기초 100제</title>
     <link href="http://luvbud.github.io/basic-000/"/>
     <id>http://luvbud.github.io/basic-000/</id>
     <published>2020-04-23T11:24:39.000Z</published>
-    <updated>2020-04-23T12:06:47.897Z</updated>
+    <updated>2020-04-30T05:57:21.516Z</updated>
     
     <summary type="html">
     
@@ -41,7 +75,7 @@
     
       <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
     
-      <category term="algorithm" scheme="http://luvbud.github.io/tags/algorithm/"/>
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
     
   </entry>
   
