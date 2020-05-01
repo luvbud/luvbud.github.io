@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luvbud.github.io/"/>
-  <updated>2020-04-30T06:41:14.736Z</updated>
+  <updated>2020-05-01T07:45:47.179Z</updated>
   <id>http://luvbud.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>백준 4344번: 평균은 넘겠지</title>
+    <link href="http://luvbud.github.io/boj-4344/"/>
+    <id>http://luvbud.github.io/boj-4344/</id>
+    <published>2020-05-01T07:44:11.000Z</published>
+    <updated>2020-05-01T07:45:47.179Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+
+&lt;details&gt;
+&lt;summary style=&quot;font-size: 16px; line-height: 1.5;&quot;&gt;문제보기&lt;/summary&gt;
+
+&lt;h4 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="study" scheme="http://luvbud.github.io/tags/study/"/>
+    
+      <category term="python" scheme="http://luvbud.github.io/tags/python/"/>
+    
+      <category term="boj" scheme="http://luvbud.github.io/tags/boj/"/>
+    
+  </entry>
   
   <entry>
     <title>백준 2884번: 알람 시계</title>
